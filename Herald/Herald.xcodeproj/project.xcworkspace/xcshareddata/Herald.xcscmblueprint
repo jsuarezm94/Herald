@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B45FD30F72AA259B987184774ED0FB01895378AB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B82ACB355CEE3F24569CF93530B4726C959061BA" : 0,
+    "B45FD30F72AA259B987184774ED0FB01895378AB" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D32F2B78-15C4-4322-9E64-FC96BCCD95E2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B82ACB355CEE3F24569CF93530B4726C959061BA" : "..",
+    "B45FD30F72AA259B987184774ED0FB01895378AB" : "Herald\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Herald",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Herald\/Herald.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jsuarezm94\/Herald.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B45FD30F72AA259B987184774ED0FB01895378AB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NDMobileApps\/assignment0-jsuarezm94.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B82ACB355CEE3F24569CF93530B4726C959061BA"
+    }
+  ]
+}
