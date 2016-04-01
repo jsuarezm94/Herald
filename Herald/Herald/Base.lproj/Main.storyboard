@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Herald" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,109 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzu-gy-eHf">
+                                <rect key="frame" x="20" y="28" width="99" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Message View"/>
+                                <connections>
+                                    <segue destination="FEk-Sv-vYM" kind="show" id="5nE-ME-7d7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoQ-6J-Kez">
+                                <rect key="frame" x="20" y="106" width="67" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Map View"/>
+                            </button>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aoQ-6J-Kez" firstAttribute="top" secondItem="Uzu-gy-eHf" secondAttribute="bottom" constant="48" id="DnZ-aq-hiM"/>
+                            <constraint firstItem="Uzu-gy-eHf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="TSe-3T-4Hp"/>
+                            <constraint firstItem="aoQ-6J-Kez" firstAttribute="leading" secondItem="Uzu-gy-eHf" secondAttribute="leading" id="htq-Rc-yE4"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Uzu-gy-eHf" secondAttribute="leading" id="oMg-km-Kj6"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="J1D-DM-eRP">
+            <objects>
+                <viewController id="FEk-Sv-vYM" customClass="MessageViewController" customModule="Herald" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wvf-ds-JBL"/>
+                        <viewControllerLayoutGuide type="bottom" id="RLV-8J-8z1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yfi-ZH-dMh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGS-WC-dPf">
+                                <rect key="frame" x="20" y="78" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQT-dh-Yt9">
+                                <rect key="frame" x="20" y="28" width="101" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Send message"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="FEk-Sv-vYM" eventType="touchUpInside" id="LJM-EN-x20"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SQT-dh-Yt9" firstAttribute="top" secondItem="Wvf-ds-JBL" secondAttribute="bottom" constant="8" id="0Qy-CZ-iIa"/>
+                            <constraint firstItem="bGS-WC-dPf" firstAttribute="top" secondItem="SQT-dh-Yt9" secondAttribute="bottom" constant="20" id="Cfg-eo-pGf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bGS-WC-dPf" secondAttribute="trailing" id="TOn-sC-97a"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="bGS-WC-dPf" secondAttribute="leading" id="dez-e6-O5U"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="SQT-dh-Yt9" secondAttribute="leading" id="wFG-Ns-6pK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="messageContent" destination="bGS-WC-dPf" id="pu9-cs-Imm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9i1-xV-zix" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="-89"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2rh-gX-Oie">
+            <objects>
+                <viewController id="slf-ME-cTI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AnQ-Hz-TnT"/>
+                        <viewControllerLayoutGuide type="bottom" id="hql-Jc-eSe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0c7-aj-enE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ac2-45-aD0">
+                                <rect key="frame" x="20" y="28" width="560" height="516"/>
+                                <animations/>
+                            </mapView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ac2-45-aD0" secondAttribute="trailing" id="1cw-2J-sxX"/>
+                            <constraint firstItem="ac2-45-aD0" firstAttribute="top" secondItem="AnQ-Hz-TnT" secondAttribute="bottom" constant="8" id="C7n-fM-cSL"/>
+                            <constraint firstItem="hql-Jc-eSe" firstAttribute="top" secondItem="ac2-45-aD0" secondAttribute="bottom" constant="56" id="Fiw-25-ElK"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ac2-45-aD0" secondAttribute="leading" id="gKw-BK-lXO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ua1-KD-Qmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="600"/>
         </scene>
     </scenes>
 </document>
