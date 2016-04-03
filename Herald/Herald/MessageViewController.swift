@@ -37,6 +37,10 @@ class MessageViewController: UIViewController, UINavigationControllerDelegate, M
         {
             controller.body = messageContent.text
             
+            let sendTo : [String]? = ["7088376127"]
+            
+            controller.recipients = sendTo
+                        
             //controller.addAttachmentData(UIImageJPEGRepresentation(UIImage(named: "images.jpg")!, 1)!, typeIdentifier: "image/jpg", filename: "images.jpg")
             controller.delegate=self
             controller.messageComposeDelegate=self
@@ -55,13 +59,13 @@ class MessageViewController: UIViewController, UINavigationControllerDelegate, M
         switch result.rawValue
         {
         case MessageComposeResultCancelled.rawValue:
-            Util.invokeAlertMethod("Warning", strBody: "Message cancelled", delegate: self)
+            Utilities.invokeAlertMethod("Warning", strBody: "Message cancelled", delegate: self)
         case MessageComposeResultFailed.rawValue:
-            Util.invokeAlertMethod("Warning", strBody: "Message failed", delegate: self)
+            Utilities.invokeAlertMethod("Warning", strBody: "Message failed", delegate: self)
         case MessageComposeResultSent.rawValue:
-            Util.invokeAlertMethod("Success", strBody: "Message sent", delegate: self)
+            Utilities.invokeAlertMethod("Success", strBody: "Message sent", delegate: self)
         default:
-            Util.invokeAlertMethod("Warning", strBody: "error", delegate: self)
+            Utilities.invokeAlertMethod("Warning", strBody: "error", delegate: self)
         }
         self.dismissViewControllerAnimated(false, completion: nil)
     }
