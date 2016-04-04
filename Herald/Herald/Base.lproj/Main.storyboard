@@ -80,7 +80,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FO1-xY-SxT">
                             <connections>
-                                <segue destination="uyO-KN-nOy" kind="show" id="e0U-7s-IzA"/>
+                                <segue destination="uyO-KN-nOy" kind="show" identifier="addGeotification" id="e0U-7s-IzA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

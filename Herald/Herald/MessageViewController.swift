@@ -41,7 +41,6 @@ class MessageViewController: UIViewController, UINavigationControllerDelegate, M
             
             controller.recipients = sendTo
                         
-            //controller.addAttachmentData(UIImageJPEGRepresentation(UIImage(named: "images.jpg")!, 1)!, typeIdentifier: "image/jpg", filename: "images.jpg")
             controller.delegate=self
             controller.messageComposeDelegate=self
             self.presentViewController(controller, animated: true, completion: nil)
