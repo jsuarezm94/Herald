@@ -61,7 +61,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FO1-xY-SxT">
                             <connections>
-                                <segue destination="2tf-oG-Fdy" kind="presentation" id="Gvd-w3-wPJ"/>
+                                <segue destination="2tf-oG-Fdy" kind="presentation" identifier="addGeotification" id="Gvd-w3-wPJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
