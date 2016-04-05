@@ -17,7 +17,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hnz-p2-eEc" kind="relationship" relationship="viewControllers" id="Fem-fT-5oe"/>
-                        <segue destination="MOv-Es-UWL" kind="relationship" relationship="viewControllers" id="kjl-G7-14z"/>
+                        <segue destination="ZTC-yA-Ldu" kind="relationship" relationship="viewControllers" id="xWG-yL-73Y"/>
                         <segue destination="ub1-Pq-nMF" kind="relationship" relationship="viewControllers" id="b0M-3b-odZ"/>
                     </connections>
                 </tabBarController>
@@ -326,33 +326,23 @@
             <point key="canvasLocation" x="-483" y="88"/>
         </scene>
         <!--Contacts-->
-        <scene sceneID="lxO-oB-FwT">
+        <scene sceneID="UwG-Gn-6vc">
             <objects>
-                <tableViewController id="MOv-Es-UWL" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DlS-hs-Oja">
+                <viewController id="ZTC-yA-Ldu" customClass="ContactListViewController" customModule="Herald" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5NQ-rE-5nA"/>
+                        <viewControllerLayoutGuide type="bottom" id="esN-yW-WlN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s2d-aI-GKT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Eva-mf-Oso">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eva-mf-Oso" id="Rhl-NO-7C0">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="MOv-Es-UWL" id="e14-hQ-x3J"/>
-                            <outlet property="delegate" destination="MOv-Es-UWL" id="jlT-Ny-BtO"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Contacts" image="contacts" id="Wyd-C1-Aac"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YC4-ki-7f4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="contacts" id="fqK-vM-6O4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DE5-AI-eKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-483" y="772"/>
+            <point key="canvasLocation" x="-483" y="771"/>
         </scene>
         <!--Templates-->
         <scene sceneID="k9f-4x-ry5">
