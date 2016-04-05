@@ -17,6 +17,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hnz-p2-eEc" kind="relationship" relationship="viewControllers" id="Fem-fT-5oe"/>
+                        <segue destination="FEk-Sv-vYM" kind="relationship" relationship="viewControllers" id="vMm-z9-LXY"/>
                         <segue destination="ZTC-yA-Ldu" kind="relationship" relationship="viewControllers" id="xWG-yL-73Y"/>
                         <segue destination="ub1-Pq-nMF" kind="relationship" relationship="viewControllers" id="b0M-3b-odZ"/>
                     </connections>
@@ -24,43 +25,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQZ-iw-jiG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1288" y="436"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Herald" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzu-gy-eHf">
-                                <rect key="frame" x="20" y="28" width="99" height="30"/>
-                                <state key="normal" title="Message View"/>
-                                <connections>
-                                    <segue destination="FEk-Sv-vYM" kind="show" id="5nE-ME-7d7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoQ-6J-Kez">
-                                <rect key="frame" x="20" y="106" width="67" height="30"/>
-                                <state key="normal" title="Map View"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="aoQ-6J-Kez" firstAttribute="top" secondItem="Uzu-gy-eHf" secondAttribute="bottom" constant="48" id="DnZ-aq-hiM"/>
-                            <constraint firstItem="Uzu-gy-eHf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="TSe-3T-4Hp"/>
-                            <constraint firstItem="aoQ-6J-Kez" firstAttribute="leading" secondItem="Uzu-gy-eHf" secondAttribute="leading" id="htq-Rc-yE4"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Uzu-gy-eHf" secondAttribute="leading" id="oMg-km-Kj6"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="251" y="-645"/>
         </scene>
         <!--Geotifications-->
         <scene sceneID="0eC-re-8xx">
@@ -107,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZM-ue-mvl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="329" y="88"/>
+            <point key="canvasLocation" x="281" y="-418"/>
         </scene>
         <!--Add Geotification-->
         <scene sceneID="VGv-oJ-EO1">
@@ -262,9 +226,9 @@
                     </connections>
                 </barButtonItem>
             </objects>
-            <point key="canvasLocation" x="1837" y="88"/>
+            <point key="canvasLocation" x="1789" y="-418"/>
         </scene>
-        <!--Message View Controller-->
+        <!--Compose Message-->
         <scene sceneID="J1D-DM-eRP">
             <objects>
                 <viewController id="FEk-Sv-vYM" customClass="MessageViewController" customModule="Herald" customModuleProvider="target" sceneMemberID="viewController">
@@ -298,13 +262,14 @@
                             <constraint firstAttribute="leadingMargin" secondItem="SQT-dh-Yt9" secondAttribute="leading" id="wFG-Ns-6pK"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Compose Message" image="compose" id="uuB-vt-oh3"/>
                     <connections>
                         <outlet property="messageContent" destination="bGS-WC-dPf" id="pu9-cs-Imm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9i1-xV-zix" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047" y="-645"/>
+            <point key="canvasLocation" x="-531" y="293"/>
         </scene>
         <!--Outbox-->
         <scene sceneID="GRh-cN-0uJ">
@@ -323,7 +288,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Asc-Rb-H6X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-483" y="88"/>
+            <point key="canvasLocation" x="-531" y="-418"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="UwG-Gn-6vc">
@@ -355,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DE5-AI-eKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-483" y="771"/>
+            <point key="canvasLocation" x="-531" y="957"/>
         </scene>
         <!--Templates-->
         <scene sceneID="k9f-4x-ry5">
@@ -384,7 +349,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wxi-f7-3Ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-483" y="1660"/>
+            <point key="canvasLocation" x="-531" y="1658"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="J4O-nS-Q9u">
@@ -402,12 +367,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtY-c6-R0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1025" y="88"/>
+            <point key="canvasLocation" x="977" y="-418"/>
         </scene>
     </scenes>
     <resources>
         <image name="AddPin" width="75" height="75"/>
         <image name="CurrentLocation" width="15" height="15"/>
+        <image name="compose" width="32" height="32"/>
         <image name="contacts" width="48" height="48"/>
         <image name="outbox" width="32" height="32"/>
         <image name="templates" width="32" height="32"/>
