@@ -336,7 +336,20 @@
                     <view key="view" contentMode="scaleToFill" id="s2d-aI-GKT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRr-AK-PuI">
+                                <rect key="frame" x="238" y="285" width="125" height="30"/>
+                                <state key="normal" title="Show Contact List"/>
+                                <connections>
+                                    <action selector="showContacts:" destination="ZTC-yA-Ldu" eventType="touchUpInside" id="bLp-KR-PX0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yRr-AK-PuI" firstAttribute="centerY" secondItem="s2d-aI-GKT" secondAttribute="centerY" id="No4-lx-t45"/>
+                            <constraint firstItem="yRr-AK-PuI" firstAttribute="centerX" secondItem="s2d-aI-GKT" secondAttribute="centerX" id="X1e-Ag-WF5"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Contacts" image="contacts" id="fqK-vM-6O4"/>
                 </viewController>

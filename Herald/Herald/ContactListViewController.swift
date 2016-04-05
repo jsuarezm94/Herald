@@ -18,6 +18,9 @@ class ContactListViewController: UIViewController, UITextFieldDelegate, UIPicker
     
     var delegate: AddContactsViewControllerDelegate!
     
+    @IBAction func showContacts(sender: AnyObject) {
+        self.showContacts()
+    }
     
     func showContacts() {
         
