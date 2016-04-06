@@ -30,6 +30,10 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         locationManager.requestAlwaysAuthorization()
         // 3
         loadAllGeotifications()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleSendMessageNotification", name: "sendMessageNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCancelMessageNotification", name: "sendMessageNotification", object: nil)
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -217,5 +221,6 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         print("Location Manager failed with the following error: \(error)")
     }
+    
     
 }

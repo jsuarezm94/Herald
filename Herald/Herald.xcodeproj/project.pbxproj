@@ -23,6 +23,7 @@
 		5373817D1CAE1D060004B596 /* Geotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373817C1CAE1D060004B596 /* Geotifications.swift */; };
 		5373817F1CAE1DB70004B596 /* GeotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373817E1CAE1DB70004B596 /* GeotificationsViewController.swift */; };
 		537381811CAE1DD00004B596 /* AddGeotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537381801CAE1DD00004B596 /* AddGeotificationsTableViewController.swift */; };
+		53D7C5071CB59DAC00360A09 /* MessageTemplatesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C5061CB59DAC00360A09 /* MessageTemplatesTableViewController.swift */; };
 		68F78A071CB37A890096ED17 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F78A061CB37A890096ED17 /* ContactListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		5373817C1CAE1D060004B596 /* Geotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geotifications.swift; sourceTree = "<group>"; };
 		5373817E1CAE1DB70004B596 /* GeotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeotificationsViewController.swift; sourceTree = "<group>"; };
 		537381801CAE1DD00004B596 /* AddGeotificationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGeotificationsTableViewController.swift; sourceTree = "<group>"; };
+		53D7C5061CB59DAC00360A09 /* MessageTemplatesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTemplatesTableViewController.swift; sourceTree = "<group>"; };
 		68F78A061CB37A890096ED17 /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				5373817E1CAE1DB70004B596 /* GeotificationsViewController.swift */,
 				537381801CAE1DD00004B596 /* AddGeotificationsTableViewController.swift */,
 				68F78A061CB37A890096ED17 /* ContactListViewController.swift */,
+				53D7C5061CB59DAC00360A09 /* MessageTemplatesTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				537381371CA5AF710004B596 /* ViewController.swift in Sources */,
 				5373817F1CAE1DB70004B596 /* GeotificationsViewController.swift in Sources */,
 				5318B4371CB1B6010099CE55 /* Contact.swift in Sources */,
+				53D7C5071CB59DAC00360A09 /* MessageTemplatesTableViewController.swift in Sources */,
 				537381691CAE10C50004B596 /* MessageViewController.swift in Sources */,
 				5318B4351CB1B5A50099CE55 /* Message.swift in Sources */,
 				537381351CA5AF710004B596 /* AppDelegate.swift in Sources */,
