@@ -19,14 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         //------------------------------------------------------------------------------
-        var sendMessageAction = UIMutableUserNotificationAction()
+        let sendMessageAction = UIMutableUserNotificationAction()
         sendMessageAction.identifier = "sendMessage"
         sendMessageAction.title = "Send"
         sendMessageAction.activationMode = UIUserNotificationActivationMode.Foreground
         sendMessageAction.destructive = false
         sendMessageAction.authenticationRequired = true
         
-        var cancelMessageAction = UIMutableUserNotificationAction()
+        let cancelMessageAction = UIMutableUserNotificationAction()
         cancelMessageAction.identifier = "cancelMessage"
         cancelMessageAction.title = "Remove message"
         cancelMessageAction.activationMode = UIUserNotificationActivationMode.Background
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let actionsArray = NSArray(objects: sendMessageAction, cancelMessageAction)
         let actionsArrayMinimal = NSArray(objects: sendMessageAction, cancelMessageAction)
         
-        var geotifyCategory = UIMutableUserNotificationCategory()
+        let geotifyCategory = UIMutableUserNotificationCategory()
         geotifyCategory.identifier = "geotifyCategory"
         geotifyCategory.setActions(actionsArray as? [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Default)
         geotifyCategory.setActions(actionsArrayMinimal as? [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Minimal)
@@ -50,7 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         //------------------------------------------------------------------------------
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Sound , .Alert , .Badge], categories: categoriesForSettings as? Set<UIUserNotificationCategory>))
         
-        let newNotificationSettings = UIUserNotificationSettings(forTypes: [.Sound , .Alert , .Badge], categories: categoriesForSettings as! Set<UIUserNotificationCategory>)
+        
+        let newNotificationSettings = UIUserNotificationSettings(forTypes: [.Sound , .Alert , .Badge], categories: categoriesForSettings as? Set<UIUserNotificationCategory>)
         UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
         //------------------------------------------------------------------------------
 

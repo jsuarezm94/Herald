@@ -24,6 +24,7 @@
 		5373817F1CAE1DB70004B596 /* GeotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373817E1CAE1DB70004B596 /* GeotificationsViewController.swift */; };
 		537381811CAE1DD00004B596 /* AddGeotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537381801CAE1DD00004B596 /* AddGeotificationsTableViewController.swift */; };
 		53D7C5071CB59DAC00360A09 /* MessageTemplatesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C5061CB59DAC00360A09 /* MessageTemplatesTableViewController.swift */; };
+		53D7C5091CB6E8D900360A09 /* AddMessageTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C5081CB6E8D900360A09 /* AddMessageTemplateViewController.swift */; };
 		68F78A071CB37A890096ED17 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F78A061CB37A890096ED17 /* ContactListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		5373817E1CAE1DB70004B596 /* GeotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeotificationsViewController.swift; sourceTree = "<group>"; };
 		537381801CAE1DD00004B596 /* AddGeotificationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGeotificationsTableViewController.swift; sourceTree = "<group>"; };
 		53D7C5061CB59DAC00360A09 /* MessageTemplatesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTemplatesTableViewController.swift; sourceTree = "<group>"; };
+		53D7C5081CB6E8D900360A09 /* AddMessageTemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMessageTemplateViewController.swift; sourceTree = "<group>"; };
 		68F78A061CB37A890096ED17 /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 				537381801CAE1DD00004B596 /* AddGeotificationsTableViewController.swift */,
 				68F78A061CB37A890096ED17 /* ContactListViewController.swift */,
 				53D7C5061CB59DAC00360A09 /* MessageTemplatesTableViewController.swift */,
+				53D7C5081CB6E8D900360A09 /* AddMessageTemplateViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				537381371CA5AF710004B596 /* ViewController.swift in Sources */,
+				53D7C5091CB6E8D900360A09 /* AddMessageTemplateViewController.swift in Sources */,
 				5373817F1CAE1DB70004B596 /* GeotificationsViewController.swift in Sources */,
 				5318B4371CB1B6010099CE55 /* Contact.swift in Sources */,
 				53D7C5071CB59DAC00360A09 /* MessageTemplatesTableViewController.swift in Sources */,

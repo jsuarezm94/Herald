@@ -10,7 +10,10 @@ import UIKit
 
 class MessageTemplatesTableViewController: UITableViewController {
 
-    var templates : [String] = ["Got to the airport", "My plane just landed", "Leaving home now!", "Got to the restaurant", "Leaving the office"]
+    //var templates : [String] = ["Got to the airport", "My plane just landed", "Leaving home now!", "Got to the restaurant", "Leaving the office"]
+    
+    var templates = [Message]()
+    var templatesList = MessageTemplates(templatesArray: [Message]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,21 @@ class MessageTemplatesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let message1 = Message(messageText: "Got to the airport")
+        let message2 = Message(messageText: "My plane just landed")
+        let message3 = Message(messageText: "Leaving home now")
+        let message4 = Message(messageText: "Got to the restaurant")
+        let message5 = Message(messageText: "Leaving the office")
+        let message6 = Message(messageText: "Leaving the party")
+        
+        templatesList.addCustomMessage(message1)
+        templatesList.addCustomMessage(message2)
+        templatesList.addCustomMessage(message3)
+        templatesList.addCustomMessage(message4)
+        templatesList.addCustomMessage(message5)
+        templatesList.addCustomMessage(message6)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +54,7 @@ class MessageTemplatesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return templates.count
+        return templatesList.count
     }
 
     
@@ -45,8 +63,11 @@ class MessageTemplatesTableViewController: UITableViewController {
 
         // Configure the cell...
         
-        let template = templates[indexPath.row]
-        cell.textLabel?.text = template
+        //let template = templates[indexPath.row]
+        //cell.textLabel?.text = template.messageText
+        
+        let message = templatesList.templatesArray[indexPath.row] as Message
+        cell.textLabel?.text = message.messageText
         return cell
     }
     
@@ -86,14 +107,23 @@ class MessageTemplatesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if let newMessageTemplateViewController = segue.destinationViewController as? AddMessageTemplateViewController {
+            newMessageTemplateViewController.templatesList = templatesList
+        }
     }
-    */
+ 
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
 }

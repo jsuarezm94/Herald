@@ -10,14 +10,20 @@ import Foundation
 
 class MessageTemplates {
 
-    var messages : [String] = ["Got to the airport", "My plane just landed", "Leaving home now!", "Got to the restaurant", "Leaving the office"]
+    var templatesArray : [Message]
     
-    init(messages: [String]) {
-        self.messages = messages
+    var count : Int {
+        return templatesArray.count
     }
     
-    func addCustomMessage(newMessage: String) {
-        messages.append(newMessage)
+    init(templatesArray: [Message]) {
+        self.templatesArray = templatesArray
     }
+    
+    func addCustomMessage(newMessage: Message) {
+        templatesArray.append(newMessage)
+    }
+    
+    
     
 }

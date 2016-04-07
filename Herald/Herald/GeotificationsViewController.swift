@@ -32,7 +32,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         loadAllGeotifications()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleSendMessageNotification", name: "sendMessageNotification", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCancelMessageNotification", name: "sendMessageNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCancelMessageNotification", name: "CancelMessageNotification", object: nil)
         
     }
     
