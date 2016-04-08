@@ -42,6 +42,14 @@ class Geotification: NSObject, NSCoding, MKAnnotation {
         return "Radius: \(radius)m - \(eventTypeString)"
     }
     
+    var returnType: String? {
+        return eventType == .OnEntry ? "On Entry" : "On Exit"
+    }
+    
+    var returnRadius: String? {
+        return "\(radius)m"
+    }
+    
     init(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, identifier: String, note: String, eventType: EventType) {
         self.coordinate = coordinate
         self.radius = radius

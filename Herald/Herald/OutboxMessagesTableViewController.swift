@@ -1,50 +1,27 @@
 //
-//  MessageTemplatesTableViewController.swift
+//  OutboxMessagesTableViewController.swift
 //  Herald
 //
-//  Created by Jose Alberto Suarez on 4/6/16.
+//  Created by Jose Alberto Suarez on 4/7/16.
 //  Copyright © 2016 Jose Suarez. All rights reserved.
 //
 
 import UIKit
 
-class MessageTemplatesTableViewController: UITableViewController {
+class OutboxMessagesTableViewController: UITableViewController {
 
-    //var templates : [String] = ["Got to the airport", "My plane just landed", "Leaving home now!", "Got to the restaurant", "Leaving the office"]
-    
-    var templates = [Message]()
-    var templatesList = MessageTemplates(templatesArray: [Message]())
+    var geotificationsList : [Geotification]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let message1 = Message(messageText: "Got to the airport")
-        let message2 = Message(messageText: "My plane just landed")
-        let message3 = Message(messageText: "Leaving home now")
-        let message4 = Message(messageText: "Got to the restaurant")
-        let message5 = Message(messageText: "Leaving the office")
-        let message6 = Message(messageText: "Leaving the party")
-        
-        templatesList.addCustomMessage(message1)
-        templatesList.addCustomMessage(message2)
-        templatesList.addCustomMessage(message3)
-        templatesList.addCustomMessage(message4)
-        templatesList.addCustomMessage(message5)
-        templatesList.addCustomMessage(message6)
-
-    }
-    
-    func loadList(notification: NSNotification){
-        //load data here
-        self.tableView.reloadData()
+        self.navigationItem.hidesBackButton = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,25 +38,25 @@ class MessageTemplatesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return templatesList.count
+        return (geotificationsList?.count)!
     }
 
+    @IBAction func switchToMap(sender: UIBarButtonItem) {
+        navigationController?.popViewControllerAnimated(true)
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("templateCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("outboxMessageCell", forIndexPath: indexPath) as! OutboxMessagesTableViewCell
 
         // Configure the cell...
-        
-        //let template = templates[indexPath.row]
-        //cell.textLabel?.text = template.messageText
-        
-        let message = templatesList.templatesArray[indexPath.row] as Message
-        cell.textLabel?.text = message.messageText
+        let message = geotificationsList![indexPath.row] as Geotification
+        cell.messageField?.text = message.note
+        cell.radiusField?.text = message.returnRadius
+        cell.typeField?.text = message.returnType
         return cell
     }
-    
 
-    /*
+    /*  
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
@@ -114,23 +91,14 @@ class MessageTemplatesTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        if let newMessageTemplateViewController = segue.destinationViewController as? AddMessageTemplateViewController {
-            newMessageTemplateViewController.templatesList = templatesList
-        }
     }
- 
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
+    */
 
 }

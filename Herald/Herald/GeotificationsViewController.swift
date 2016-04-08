@@ -37,12 +37,20 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        /*
         if segue.identifier == "addGeotification" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let vc = navigationController.viewControllers.first as! AddGeotificationViewController
             vc.delegate = self
         }
+        */
+        if let outboxListTableViewController = segue.destinationViewController as? OutboxMessagesTableViewController {
+            outboxListTableViewController.geotificationsList = geotifications
+        }
+        
     }
+    
+    
     
     // MARK: Loading and saving functions
     

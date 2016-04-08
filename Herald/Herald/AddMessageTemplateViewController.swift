@@ -25,9 +25,21 @@ class AddMessageTemplateViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func cancelMessage(sender: UIBarButtonItem) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
     @IBAction func saveMessage(sender: UIBarButtonItem) {
         let newMessage = Message(messageText: messageText.text!)
         templatesList?.addCustomMessage(newMessage)
+        
+        //NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
+        
+        //let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        //defaults.setObject([console!.complete, console!.favorite], forKey: console!.consoleID)
+        //defaults.setObject(newMessage, forKey:  "\(templatesList!.count)")
+        //defaults.synchronize()
         
         navigationController?.popViewControllerAnimated(true)
     }

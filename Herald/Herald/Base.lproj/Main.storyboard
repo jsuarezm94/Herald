@@ -17,7 +17,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hnz-p2-eEc" kind="relationship" relationship="viewControllers" id="Fem-fT-5oe"/>
-                        <segue destination="PsK-Vk-rWS" kind="relationship" relationship="viewControllers" id="vMm-z9-LXY"/>
+                        <segue destination="2tf-oG-Fdy" kind="relationship" relationship="viewControllers" id="sxd-eX-SCj"/>
                         <segue destination="ZTC-yA-Ldu" kind="relationship" relationship="viewControllers" id="xWG-yL-73Y"/>
                         <segue destination="WSO-Jt-Aba" kind="relationship" relationship="viewControllers" id="b0M-3b-odZ"/>
                     </connections>
@@ -61,7 +61,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="showList" id="FO1-xY-SxT">
                             <connections>
-                                <segue destination="2tf-oG-Fdy" kind="presentation" identifier="addGeotification" id="Gvd-w3-wPJ"/>
+                                <segue destination="Uh4-2r-gNQ" kind="show" identifier="viewOutboxList" id="nhh-6Y-KU9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -72,6 +72,83 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZM-ue-mvl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="281" y="-418"/>
+        </scene>
+        <!--Outbox Messages-->
+        <scene sceneID="qP2-xJ-8kc">
+            <objects>
+                <tableViewController id="Uh4-2r-gNQ" customClass="OutboxMessagesTableViewController" customModule="Herald" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="KUD-Dl-HAl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="outboxMessageCell" rowHeight="60" id="ezJ-1q-tnV" customClass="OutboxMessagesTableViewCell" customModule="Herald" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ezJ-1q-tnV" id="ynU-2M-ZlB">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzD-gS-IL7">
+                                            <rect key="frame" x="12" y="35.5" width="47" height="13.5"/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fs3-1g-W5B">
+                                            <rect key="frame" x="537" y="10.5" width="28" height="14.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mm-3X-ShC">
+                                            <rect key="frame" x="526.5" y="35" width="38.5" height="14.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7m-VC-lj3">
+                                            <rect key="frame" x="12" y="8" width="61" height="19.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8Mm-3X-ShC" firstAttribute="trailing" secondItem="fs3-1g-W5B" secondAttribute="trailing" id="0SX-Ot-AWn"/>
+                                        <constraint firstAttribute="topMargin" secondItem="w7m-VC-lj3" secondAttribute="top" id="2Bt-e2-bcd"/>
+                                        <constraint firstItem="w7m-VC-lj3" firstAttribute="leading" secondItem="ynU-2M-ZlB" secondAttribute="leadingMargin" constant="4" id="T9l-9K-QDv"/>
+                                        <constraint firstItem="FzD-gS-IL7" firstAttribute="top" secondItem="w7m-VC-lj3" secondAttribute="bottom" constant="8" id="Ur6-7T-CjJ"/>
+                                        <constraint firstItem="8Mm-3X-ShC" firstAttribute="centerY" secondItem="FzD-gS-IL7" secondAttribute="centerY" id="VnL-vB-eey"/>
+                                        <constraint firstItem="fs3-1g-W5B" firstAttribute="centerY" secondItem="w7m-VC-lj3" secondAttribute="centerY" id="hk7-2I-q5F"/>
+                                        <constraint firstItem="FzD-gS-IL7" firstAttribute="leading" secondItem="w7m-VC-lj3" secondAttribute="leading" id="oEN-sg-F7a"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="fs3-1g-W5B" secondAttribute="trailing" constant="27" id="pnv-X6-FG3"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contactField" destination="w7m-VC-lj3" id="DAy-WB-pFE"/>
+                                    <outlet property="messageField" destination="FzD-gS-IL7" id="0Ck-hx-OjU"/>
+                                    <outlet property="radiusField" destination="8Mm-3X-ShC" id="7B9-fV-VN4"/>
+                                    <outlet property="typeField" destination="fs3-1g-W5B" id="C7K-9S-MqD"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Uh4-2r-gNQ" id="O96-EM-rdK"/>
+                            <outlet property="delegate" destination="Uh4-2r-gNQ" id="RXJ-mY-ov8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Outbox Messages" id="hz0-CC-a4K">
+                        <barButtonItem key="rightBarButtonItem" image="CurrentLocation" id="ERK-fe-s03">
+                            <connections>
+                                <action selector="switchToMap:" destination="Uh4-2r-gNQ" id="kmd-ld-ZC8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzL-7W-xK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007" y="-418"/>
         </scene>
         <!--Add Geotification-->
         <scene sceneID="VGv-oJ-EO1">
@@ -320,7 +397,7 @@
                     </connections>
                 </barButtonItem>
             </objects>
-            <point key="canvasLocation" x="1789" y="-418"/>
+            <point key="canvasLocation" x="281" y="317"/>
         </scene>
         <!--Compose a message-->
         <scene sceneID="J1D-DM-eRP">
@@ -370,7 +447,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="304" y="293"/>
+            <point key="canvasLocation" x="320" y="-1267"/>
         </scene>
         <!--Outbox-->
         <scene sceneID="GRh-cN-0uJ">
@@ -503,6 +580,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Message Template" id="hFz-Z7-hWY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Szw-82-2Y1">
+                            <connections>
+                                <action selector="cancelMessage:" destination="jQR-JL-0GM" id="4Dy-1H-n40"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="9dh-jJ-krR">
                             <connections>
                                 <action selector="saveMessage:" destination="jQR-JL-0GM" id="biI-3N-DUj"/>
@@ -517,10 +599,11 @@
             </objects>
             <point key="canvasLocation" x="992" y="1654"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Compose-->
         <scene sceneID="J4O-nS-Q9u">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2tf-oG-Fdy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Compose" image="compose" id="fDQ-or-5qS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gnv-Z3-3P0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -533,7 +616,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtY-c6-R0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="-418"/>
+            <point key="canvasLocation" x="-531" y="317"/>
         </scene>
         <!--Templates-->
         <scene sceneID="i74-9U-FNZ">
@@ -571,7 +654,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eG6-F3-cfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-508" y="293"/>
+            <point key="canvasLocation" x="-492" y="-1267"/>
         </scene>
     </scenes>
     <resources>
