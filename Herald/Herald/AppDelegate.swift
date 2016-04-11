@@ -56,6 +56,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         //------------------------------------------------------------------------------
 
         UIApplication.sharedApplication().cancelAllLocalNotifications()
+        
+        if let tabBarController = window?.rootViewController as? UITabBarController,
+        let nav1 = tabBarController.viewControllers![0] as? UINavigationController,
+        let mapVc = nav1.topViewController as? GeotificationsViewController,
+        let nav2 = tabBarController.viewControllers![1] as? UINavigationController,
+        let createVc = nav2.topViewController as? AddGeotificationViewController {
+            createVc.delegate = mapVc
+        }
+        
         return true
     }
     

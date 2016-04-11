@@ -285,6 +285,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdV-CO-gxQ">
                                                     <rect key="frame" x="113" y="42" width="71" height="30"/>
                                                     <state key="normal" title="Templates"/>
+                                                    <connections>
+                                                        <segue destination="ub1-Pq-nMF" kind="presentation" identifier="selectMessageFromTemplates" id="2gv-w9-9jq"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -368,13 +371,7 @@
                             <outlet property="delegate" destination="mvS-3g-Zyi" id="Paj-55-1WC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Geotification" id="GNp-Mi-GvC">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="dt8-sR-q3j">
-                            <connections>
-                                <action selector="onCancel:" destination="mvS-3g-Zyi" id="O7G-ZN-ySj"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Add Geotification" id="GNp-Mi-GvC"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="addButton" destination="RnP-A7-NFm" id="Z9J-wd-jC5"/>
@@ -503,6 +500,7 @@
         <!--Message Templates-->
         <scene sceneID="k9f-4x-ry5">
             <objects>
+                <exit id="Afh-ab-WHR" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wxi-f7-3Ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="ub1-Pq-nMF" customClass="MessageTemplatesTableViewController" customModule="Herald" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rMA-jO-EyX">
@@ -511,7 +509,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="templateCell" textLabel="TBr-iP-bhc" style="IBUITableViewCellStyleDefault" id="b5Q-ui-gqn">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b5Q-ui-gqn" id="faR-rG-Yoh">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -526,6 +524,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Afh-ab-WHR" kind="unwind" identifier="saveSelectedMessage" unwindAction="unwindWithSelectedMessage:" id="QRK-eV-IZc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -542,7 +543,7 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="281" y="1654"/>
+            <point key="canvasLocation" x="233" y="1654"/>
         </scene>
         <!--New Message Template-->
         <scene sceneID="Re8-c7-QhO">
@@ -666,4 +667,7 @@
         <image name="showList" width="16" height="16"/>
         <image name="templates" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2gv-w9-9jq"/>
+    </inferredMetricsTieBreakers>
 </document>

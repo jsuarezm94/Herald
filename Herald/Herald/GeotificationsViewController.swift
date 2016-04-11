@@ -14,12 +14,10 @@ let kSavedItemsKey = "savedItems"
 
 class GeotificationsViewController: UIViewController, AddGeotificationsViewControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    //@IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapView: MKMapView!
     
     var geotifications = [Geotification]()
     let locationManager = CLLocationManager()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +35,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        /*
-        if segue.identifier == "addGeotification" {
-            let navigationController = segue.destinationViewController as! UINavigationController
-            let vc = navigationController.viewControllers.first as! AddGeotificationViewController
-            vc.delegate = self
-        }
-        */
+        
         if let outboxListTableViewController = segue.destinationViewController as? OutboxMessagesTableViewController {
             outboxListTableViewController.geotificationsList = geotifications
         }

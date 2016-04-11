@@ -30,17 +30,12 @@ class AddMessageTemplateViewController: UIViewController {
     }
     
     @IBAction func saveMessage(sender: UIBarButtonItem) {
-        let newMessage = Message(messageText: messageText.text!)
+        let newMessage = messageText.text!
         templatesList?.addCustomMessage(newMessage)
         
-        //NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
-        
-        //let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        
-        //defaults.setObject([console!.complete, console!.favorite], forKey: console!.consoleID)
-        //defaults.setObject(newMessage, forKey:  "\(templatesList!.count)")
-        //defaults.synchronize()
-        
+        NSUserDefaults.standardUserDefaults().setObject(templatesList?.templatesArray, forKey: "messageTemplates")
+        NSUserDefaults.standardUserDefaults().synchronize()
+
         navigationController?.popViewControllerAnimated(true)
     }
 
