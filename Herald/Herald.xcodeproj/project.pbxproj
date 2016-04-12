@@ -29,7 +29,8 @@
 		53D7C50D1CB721DE00360A09 /* OutboxMessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C50C1CB721DE00360A09 /* OutboxMessagesTableViewController.swift */; };
 		68DC81A21CBD9FD8004A78EC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A11CBD9FD8004A78EC /* Group.swift */; };
 		68DC81A41CBDA043004A78EC /* GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A31CBDA043004A78EC /* GroupList.swift */; };
-		68F78A071CB37A890096ED17 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F78A061CB37A890096ED17 /* ContactListViewController.swift */; };
+		68DC81A61CBDA1B8004A78EC /* GroupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A51CBDA1B8004A78EC /* GroupListTableViewController.swift */; };
+		68DC81A81CBDA414004A78EC /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A71CBDA414004A78EC /* AddGroupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +58,8 @@
 		53D7C50C1CB721DE00360A09 /* OutboxMessagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboxMessagesTableViewController.swift; sourceTree = "<group>"; };
 		68DC81A11CBD9FD8004A78EC /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		68DC81A31CBDA043004A78EC /* GroupList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupList.swift; sourceTree = "<group>"; };
-		68F78A061CB37A890096ED17 /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		68DC81A51CBDA1B8004A78EC /* GroupListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListTableViewController.swift; sourceTree = "<group>"; };
+		68DC81A71CBDA414004A78EC /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +132,7 @@
 				537381361CA5AF710004B596 /* ViewController.swift */,
 				53D7C5111CB723A700360A09 /* Compose Message */,
 				53D7C5101CB7239D00360A09 /* Message Templates */,
-				53D7C50F1CB7239800360A09 /* Contacts */,
+				53D7C50F1CB7239800360A09 /* Groups */,
 				53D7C50E1CB7238C00360A09 /* Geotifications / Outbox */,
 			);
 			name = Controllers;
@@ -160,12 +162,13 @@
 			name = "Geotifications / Outbox";
 			sourceTree = "<group>";
 		};
-		53D7C50F1CB7239800360A09 /* Contacts */ = {
+		53D7C50F1CB7239800360A09 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				68F78A061CB37A890096ED17 /* ContactListViewController.swift */,
+				68DC81A51CBDA1B8004A78EC /* GroupListTableViewController.swift */,
+				68DC81A71CBDA414004A78EC /* AddGroupViewController.swift */,
 			);
-			name = Contacts;
+			name = Groups;
 			sourceTree = "<group>";
 		};
 		53D7C5101CB7239D00360A09 /* Message Templates */ = {
@@ -262,6 +265,7 @@
 				53D7C5091CB6E8D900360A09 /* AddMessageTemplateViewController.swift in Sources */,
 				5373817F1CAE1DB70004B596 /* GeotificationsViewController.swift in Sources */,
 				68DC81A21CBD9FD8004A78EC /* Group.swift in Sources */,
+				68DC81A61CBDA1B8004A78EC /* GroupListTableViewController.swift in Sources */,
 				5318B4371CB1B6010099CE55 /* Contact.swift in Sources */,
 				53D7C5071CB59DAC00360A09 /* MessageTemplatesTableViewController.swift in Sources */,
 				68DC81A41CBDA043004A78EC /* GroupList.swift in Sources */,
@@ -273,8 +277,8 @@
 				5318B4331CB1B57D0099CE55 /* MessageTemplates.swift in Sources */,
 				537381811CAE1DD00004B596 /* AddGeotificationsTableViewController.swift in Sources */,
 				5373816F1CAE13BE0004B596 /* Utilities.swift in Sources */,
+				68DC81A81CBDA414004A78EC /* AddGroupViewController.swift in Sources */,
 				53D7C50B1CB7203C00360A09 /* OutboxMessagesTableViewCell.swift in Sources */,
-				68F78A071CB37A890096ED17 /* ContactListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
