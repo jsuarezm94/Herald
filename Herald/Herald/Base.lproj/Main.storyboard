@@ -393,6 +393,7 @@
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="addButton" destination="RnP-A7-NFm" id="Z9J-wd-jC5"/>
+                        <outlet property="contactTextField" destination="4lt-D5-xxz" id="TVb-UI-ORK"/>
                         <outlet property="eventTypeSegmentedControl" destination="vIh-B5-Ume" id="YX8-gC-71Z"/>
                         <outlet property="mapView" destination="3L3-fj-gHa" id="V7w-Uk-l7h"/>
                         <outlet property="noteTextField" destination="a3Z-Uh-s6Q" id="sUD-e1-xJ7"/>

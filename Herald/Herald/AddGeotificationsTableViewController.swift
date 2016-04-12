@@ -14,7 +14,7 @@ protocol AddGeotificationsViewControllerDelegate {
         radius: Double, identifier: String, note: String, eventType: EventType)
 }
 
-class AddGeotificationViewController: UITableViewController {
+class AddGeotificationViewController: UITableViewController, UITextFieldDelegate {
     
     
     @IBOutlet var addButton: UIBarButtonItem!
@@ -23,6 +23,7 @@ class AddGeotificationViewController: UITableViewController {
     @IBOutlet weak var eventTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var radiusTextField: UITextField!
     @IBOutlet weak var noteTextField: UITextField!
+    @IBOutlet weak var contactTextField: UITextField!
     @IBOutlet weak var mapView: MKMapView!
     
     var myMessage : String?
@@ -38,6 +39,11 @@ class AddGeotificationViewController: UITableViewController {
         self.noteTextField.text = myMessage
         
         tableView.tableFooterView = UIView()
+        
+        //allows dismissal of keyboard on return key press
+        self.radiusTextField.delegate = self
+        self.noteTextField.delegate = self
+        self.contactTextField.delegate = self
     }
     
     @IBAction func textFieldEditingChanged(sender: UITextField) {
@@ -86,6 +92,11 @@ class AddGeotificationViewController: UITableViewController {
             noteTextField.text = messageTemplatesTableViewController.selectedMessage
             addButton.enabled = true
         }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {   //allows dismissal of keyboard on return key press
+        self.view.endEditing(true)
+        return false
     }
 
 }

@@ -69,6 +69,7 @@ class MessageViewController: UIViewController, UINavigationControllerDelegate, M
         self.dismissViewControllerAnimated(false, completion: nil)
     }
     
+    
     /*
     // MARK: - Navigation
 
