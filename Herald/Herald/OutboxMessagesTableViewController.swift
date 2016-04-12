@@ -64,6 +64,16 @@ class OutboxMessagesTableViewController: UITableViewController {
     }
     */
 
+    func saveAllGeotifications() {
+        let items = NSMutableArray()
+        for geotification in geotificationsList! {
+            let item = NSKeyedArchiver.archivedDataWithRootObject(geotification)
+            items.addObject(item)
+        }
+        NSUserDefaults.standardUserDefaults().setObject(items, forKey: kSavedItemsKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -75,6 +85,7 @@ class OutboxMessagesTableViewController: UITableViewController {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         
             tableView.endUpdates()
+            saveAllGeotifications()
             
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

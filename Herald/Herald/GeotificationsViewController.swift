@@ -27,11 +27,15 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         // 2
         locationManager.requestAlwaysAuthorization()
         // 3
-        loadAllGeotifications()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleSendMessageNotification", name: "sendMessageNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCancelMessageNotification", name: "cancelMessageNotification", object: nil)
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        loadAllGeotifications()
+        updateGeotificationsCount()
     }
     
     func handleSendMessageNotification() {
