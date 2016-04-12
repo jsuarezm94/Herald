@@ -43,11 +43,7 @@ class AddGeotificationViewController: UITableViewController {
     @IBAction func textFieldEditingChanged(sender: UITextField) {
         addButton.enabled = !radiusTextField.text!.isEmpty && !noteTextField.text!.isEmpty
     }
-    /*
-    override func viewWillAppear(animated: Bool) {
-        self.noteTextField.text = myMessage
-    }
-    */
+
     @IBAction private func onAdd(sender: AnyObject) {
         self.noteTextField.resignFirstResponder()
         let coordinate = mapView.centerCoordinate
@@ -55,7 +51,22 @@ class AddGeotificationViewController: UITableViewController {
         let identifier = NSUUID().UUIDString
         let note = noteTextField.text
         let eventType = (eventTypeSegmentedControl.selectedSegmentIndex == 0) ? EventType.OnEntry : EventType.OnExit
+        
+        Utilities.invokeAlertMethod("Compose Message", strBody: "Message is scheduled for _________", delegate: self)
+        
         delegate!.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: eventType)
+        
+        self.resetInterface()
+    }
+    
+    func resetInterface() {
+        eventTypeSegmentedControl.selectedSegmentIndex = 0
+        mapView.centerCoordinate = CLLocationCoordinate2D(latitude: 37.13283999999998, longitude: -95.785579999999996)
+        noteTextField.text! = ""
+        radiusTextField.text! = "100"
+        
+        addButton.enabled = false
+
     }
     
     @IBAction private func onZoomToCurrentLocation(sender: AnyObject) {
@@ -69,17 +80,11 @@ class AddGeotificationViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
 
-        /*
-        if let selectMessageTemplateTableViewController = segue.destinationViewController as? MessageTemplatesTableViewController {
-            selectMessageTemplateTableViewController.createVc = self
-        }
-        */
     }
     
     @IBAction func unwindWithSelectedMessage(segue:UIStoryboardSegue) {
         if let messageTemplatesTableViewController = segue.sourceViewController as? MessageTemplatesTableViewController {
-            //selectedMessage = messageTemplatesTableViewController.myMessageTemplate {
-            noteTextField.text = messageTemplatesTableViewController.myMessageTemplate
+            noteTextField.text = messageTemplatesTableViewController.selectedMessage
             addButton.enabled = true
         }
     }

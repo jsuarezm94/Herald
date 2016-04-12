@@ -15,9 +15,8 @@ class MessageTemplatesTableViewController: UITableViewController {
     var templatesList = MessageTemplates(templatesArray: [String]())
     
     let kArray = "messageTemplates"
-    
-    var selectedMessage : String = ""
-    var myMessageTemplate : String?
+
+    var selectedMessage : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +40,7 @@ class MessageTemplatesTableViewController: UITableViewController {
                     templatesList.addCustomMessage(messageToAdd)
                 }
             }
+            
         } else {
             
             let message1 = "Got to the airport"
@@ -92,15 +92,8 @@ class MessageTemplatesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //let createVc = self.presentingViewController as? AddGeotificationViewController
-        selectedMessage = self.templatesList.templatesArray[indexPath.row]
+        //selectedMessage = self.templatesList.templatesArray[indexPath.row]
         
-        myMessageTemplate = self.templatesList.templatesArray[indexPath.row]
-        //createVc?.myMessage = message
-        //print(createVc?.myMessage)
-        //createVc?.noteTextField.text! = message
-        
-        //createVc?.addButton.enabled = true
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
@@ -150,17 +143,14 @@ class MessageTemplatesTableViewController: UITableViewController {
             newMessageTemplateViewController.templatesList = templatesList
         }
         
-        
         if segue.identifier == "saveSelectedMessage" {
             if let cell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPathForCell(cell)
                 if let index = indexPath?.row {
-                    myMessageTemplate = templatesList.templatesArray[index]
+                    selectedMessage = templatesList.templatesArray[index]
                 }
             }
         }
-        
-        
     }
 
     

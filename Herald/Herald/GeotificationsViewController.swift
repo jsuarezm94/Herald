@@ -88,7 +88,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     }
     
     func updateGeotificationsCount() {
-        title = "Geotifications (\(geotifications.count))"
+        title = "Outbox (\(geotifications.count))"
         navigationItem.rightBarButtonItem?.enabled = (geotifications.count < 20)  // Add this line
     }
     

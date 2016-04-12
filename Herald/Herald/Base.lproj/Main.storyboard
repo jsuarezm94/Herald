@@ -73,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="281" y="-418"/>
         </scene>
-        <!--Outbox Messages-->
+        <!--Outbox-->
         <scene sceneID="qP2-xJ-8kc">
             <objects>
                 <tableViewController id="Uh4-2r-gNQ" customClass="OutboxMessagesTableViewController" customModule="Herald" customModuleProvider="target" sceneMemberID="viewController">
@@ -138,7 +138,7 @@
                             <outlet property="delegate" destination="Uh4-2r-gNQ" id="RXJ-mY-ov8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Outbox Messages" id="hz0-CC-a4K">
+                    <navigationItem key="navigationItem" title="Outbox" id="hz0-CC-a4K">
                         <barButtonItem key="rightBarButtonItem" image="CurrentLocation" id="ERK-fe-s03">
                             <connections>
                                 <action selector="switchToMap:" destination="Uh4-2r-gNQ" id="kmd-ld-ZC8"/>
@@ -150,12 +150,12 @@
             </objects>
             <point key="canvasLocation" x="1007" y="-418"/>
         </scene>
-        <!--Add Geotification-->
+        <!--Compose Message-->
         <scene sceneID="VGv-oJ-EO1">
             <objects>
                 <tableViewController id="mvS-3g-Zyi" customClass="AddGeotificationViewController" customModule="Herald" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kUz-qj-ZuW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -242,11 +242,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="VJz-4A-s4k">
-                                        <rect key="frame" x="0.0" y="408" width="600" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="VJz-4A-s4k">
+                                        <rect key="frame" x="0.0" y="408" width="600" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VJz-4A-s4k" id="orT-tE-Q2H">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyz-zo-Y65">
@@ -301,11 +301,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="SuD-Le-e5H">
-                                        <rect key="frame" x="0.0" y="488" width="600" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="SuD-Le-e5H">
+                                        <rect key="frame" x="0.0" y="483" width="600" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SuD-Le-e5H" id="ceO-HT-ey8">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3R-yl-CAv">
@@ -323,13 +323,9 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxq-oc-dGd">
-                                                    <rect key="frame" x="258" y="42" width="94" height="30"/>
-                                                    <state key="normal" title="Contact Book"/>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27B-UW-nQW">
-                                                    <rect key="frame" x="113" y="42" width="62" height="30"/>
-                                                    <state key="normal" title="Favorites"/>
+                                                    <rect key="frame" x="113" y="42" width="50" height="30"/>
+                                                    <state key="normal" title="Groups"/>
                                                 </button>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Smith" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4lt-D5-xxz">
                                                     <rect key="frame" x="113" y="7" width="464" height="30"/>
@@ -352,14 +348,34 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="4lt-D5-xxz" firstAttribute="centerY" secondItem="E3R-yl-CAv" secondAttribute="centerY" id="LA5-kG-x9J"/>
-                                                <constraint firstItem="Xxq-oc-dGd" firstAttribute="centerY" secondItem="27B-UW-nQW" secondAttribute="centerY" id="Y9u-bC-vjh"/>
                                                 <constraint firstItem="4lt-D5-xxz" firstAttribute="leading" secondItem="E3R-yl-CAv" secondAttribute="trailing" constant="5" id="Ylz-V1-wSZ"/>
                                                 <constraint firstItem="27B-UW-nQW" firstAttribute="top" secondItem="4lt-D5-xxz" secondAttribute="bottom" constant="5" id="atw-EG-wj5"/>
                                                 <constraint firstItem="E3R-yl-CAv" firstAttribute="top" secondItem="ceO-HT-ey8" secondAttribute="topMargin" constant="3" id="bpG-b0-N0r"/>
                                                 <constraint firstItem="27B-UW-nQW" firstAttribute="leading" secondItem="4lt-D5-xxz" secondAttribute="leading" id="eL9-wr-ytv"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="4lt-D5-xxz" secondAttribute="trailing" constant="15" id="w2L-bg-dmA"/>
-                                                <constraint firstItem="Xxq-oc-dGd" firstAttribute="leading" secondItem="27B-UW-nQW" secondAttribute="trailing" constant="83" id="yuu-R2-ZHf"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="E3R-yl-CAv" secondAttribute="leading" id="z60-uy-voa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Spw-zU-D9l">
+                                        <rect key="frame" x="0.0" y="558" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Spw-zU-D9l" id="xFg-1E-1Uo">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cg-qg-99K">
+                                                    <rect key="frame" x="223.5" y="5" width="153" height="34"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <state key="normal" title="Schedule Message">
+                                                        <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="0Cg-qg-99K" firstAttribute="centerX" secondItem="xFg-1E-1Uo" secondAttribute="centerX" id="cql-yc-lz9"/>
+                                                <constraint firstItem="0Cg-qg-99K" firstAttribute="centerY" secondItem="xFg-1E-1Uo" secondAttribute="centerY" id="dFN-vm-R77"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -371,8 +387,10 @@
                             <outlet property="delegate" destination="mvS-3g-Zyi" id="Paj-55-1WC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Geotification" id="GNp-Mi-GvC"/>
+                    <navigationItem key="navigationItem" title="Compose Message" id="GNp-Mi-GvC"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="addButton" destination="RnP-A7-NFm" id="Z9J-wd-jC5"/>
                         <outlet property="eventTypeSegmentedControl" destination="vIh-B5-Ume" id="YX8-gC-71Z"/>
