@@ -31,6 +31,7 @@
 		68DC81A41CBDA043004A78EC /* GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A31CBDA043004A78EC /* GroupList.swift */; };
 		68DC81A61CBDA1B8004A78EC /* GroupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A51CBDA1B8004A78EC /* GroupListTableViewController.swift */; };
 		68DC81A81CBDA414004A78EC /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A71CBDA414004A78EC /* AddGroupViewController.swift */; };
+		68DC81AA1CBDAB2A004A78EC /* GroupDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A91CBDAB2A004A78EC /* GroupDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		68DC81A31CBDA043004A78EC /* GroupList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupList.swift; sourceTree = "<group>"; };
 		68DC81A51CBDA1B8004A78EC /* GroupListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListTableViewController.swift; sourceTree = "<group>"; };
 		68DC81A71CBDA414004A78EC /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
+		68DC81A91CBDAB2A004A78EC /* GroupDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			children = (
 				68DC81A51CBDA1B8004A78EC /* GroupListTableViewController.swift */,
 				68DC81A71CBDA414004A78EC /* AddGroupViewController.swift */,
+				68DC81A91CBDAB2A004A78EC /* GroupDetailTableViewController.swift */,
 			);
 			name = Groups;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				5318B4371CB1B6010099CE55 /* Contact.swift in Sources */,
 				53D7C5071CB59DAC00360A09 /* MessageTemplatesTableViewController.swift in Sources */,
 				68DC81A41CBDA043004A78EC /* GroupList.swift in Sources */,
+				68DC81AA1CBDAB2A004A78EC /* GroupDetailTableViewController.swift in Sources */,
 				537381691CAE10C50004B596 /* MessageViewController.swift in Sources */,
 				5318B4351CB1B5A50099CE55 /* Message.swift in Sources */,
 				537381351CA5AF710004B596 /* AppDelegate.swift in Sources */,

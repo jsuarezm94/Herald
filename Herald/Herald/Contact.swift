@@ -13,16 +13,14 @@ class Contact {
     var name : String
     var number : String
     
-    var list : [Contact]
     
-    init(name: String, number: String, list: [Contact]) {
+    init(name: String, number: String) {
         self.name = name
         self.number = number
-        self.list = list
     }
     
-    func addContactToList(newContact: Contact) {
-        list.append(newContact)
-    }
+//    func addContactToList(newContact: Contact) {
+//        list.append(newContact)
+//    }
     
 }
