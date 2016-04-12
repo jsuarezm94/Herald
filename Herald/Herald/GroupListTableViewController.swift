@@ -10,6 +10,9 @@ import UIKit
 
 class GroupListTableViewController: UITableViewController {
 
+    var newGroupSegueIdentifier = "newGroup"
+    var groups: GroupList = GroupList(entries: [])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +21,12 @@ class GroupListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if let table = self.view as? UITableView {
+            table.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +38,36 @@ class GroupListTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return groups.count
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == newGroupSegueIdentifier {
+            if let destVC = segue.destinationViewController as? AddGroupViewController {
+                destVC.groups = self.groups
+            }
+        }
+    }
+    
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("groupCell", forIndexPath: indexPath)
+        
+        if let label = cell.textLabel,
+            entry = groups.entry(indexPath.row) {
+            label.text = entry.name
+        }
+        
         return cell
     }
-    */
+    
+    
 
     /*
     // Override to support conditional editing of the table view.

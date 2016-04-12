@@ -615,7 +615,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="STb-ZB-lVs">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" id="STb-ZB-lVs">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="STb-ZB-lVs" id="iyJ-CK-n2L">
@@ -632,7 +632,7 @@
                     <navigationItem key="navigationItem" title="Groups" id="eVW-C3-7Hh">
                         <barButtonItem key="rightBarButtonItem" title="Add Group" id="6e7-iE-r2k">
                             <connections>
-                                <segue destination="thE-6U-a31" kind="presentation" id="5xP-0M-0b9"/>
+                                <segue destination="thE-6U-a31" kind="presentation" identifier="newGroup" id="5xP-0M-0b9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -653,18 +653,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3EB-C9-pMt">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3EB-C9-pMt">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Add Group" id="xsa-lF-edb">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Vrg-D2-QMA"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Done" id="N9p-AO-iDx"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Vrg-D2-QMA">
+                                            <connections>
+                                                <action selector="cancelButton:" destination="thE-6U-a31" id="j37-A7-HYT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="N9p-AO-iDx">
+                                            <connections>
+                                                <action selector="doneButton:" destination="thE-6U-a31" id="qTg-bc-mhV"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter group name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5k1-9A-UzD">
+                                <rect key="frame" x="225" y="285" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="xWH-lB-8mW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5k1-9A-UzD" firstAttribute="centerY" secondItem="u5O-Uy-qlv" secondAttribute="centerY" id="0Xk-Ge-gsD"/>
+                            <constraint firstItem="3EB-C9-pMt" firstAttribute="leading" secondItem="u5O-Uy-qlv" secondAttribute="leadingMargin" constant="-20" id="JkS-Wl-26g"/>
+                            <constraint firstItem="5k1-9A-UzD" firstAttribute="centerX" secondItem="u5O-Uy-qlv" secondAttribute="centerX" id="Rij-Rf-5eJ"/>
+                            <constraint firstItem="3EB-C9-pMt" firstAttribute="top" secondItem="KBx-qc-xs3" secondAttribute="bottom" id="tVb-W0-0nq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3EB-C9-pMt" secondAttribute="trailing" constant="-20" id="xBV-By-XdL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="groupNameTextField" destination="5k1-9A-UzD" id="Bwf-1a-XQU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="foB-MT-fjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
