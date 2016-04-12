@@ -18,42 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        //------------------------------------------------------------------------------
-        let sendMessageAction = UIMutableUserNotificationAction()
-        sendMessageAction.identifier = "sendMessage"
-        sendMessageAction.title = "Send"
-        sendMessageAction.activationMode = UIUserNotificationActivationMode.Foreground
-        sendMessageAction.destructive = false
-        sendMessageAction.authenticationRequired = true
-        
-        let cancelMessageAction = UIMutableUserNotificationAction()
-        cancelMessageAction.identifier = "cancelMessage"
-        cancelMessageAction.title = "Remove message"
-        cancelMessageAction.activationMode = UIUserNotificationActivationMode.Background
-        cancelMessageAction.destructive = true
-        cancelMessageAction.authenticationRequired = false
-        
-        let actionsArray = NSArray(objects: sendMessageAction, cancelMessageAction)
-        let actionsArrayMinimal = NSArray(objects: sendMessageAction, cancelMessageAction)
-        
-        let geotifyCategory = UIMutableUserNotificationCategory()
-        geotifyCategory.identifier = "geotifyCategory"
-        geotifyCategory.setActions(actionsArray as? [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Default)
-        geotifyCategory.setActions(actionsArrayMinimal as? [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Minimal)
-        
-        let categoriesForSettings = NSSet(objects: geotifyCategory)
-        //------------------------------------------------------------------------------
-        
         locationManager.delegate = self                // Add this line
         locationManager.requestAlwaysAuthorization()   // And this one
-        
-        //------------------------------------------------------------------------------
-        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Sound , .Alert , .Badge], categories: categoriesForSettings as? Set<UIUserNotificationCategory>))
-        
-        
-        let newNotificationSettings = UIUserNotificationSettings(forTypes: [.Sound , .Alert , .Badge], categories: categoriesForSettings as? Set<UIUserNotificationCategory>)
-        UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
-        //------------------------------------------------------------------------------
 
         UIApplication.sharedApplication().cancelAllLocalNotifications()
         
@@ -65,15 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             createVc.delegate = mapVc
         }
         
+        self.localNotificationSettings()
+        
         return true
     }
-    
-    /*
-     // Register the notification settings.
-     let newNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: categoriesForSettings)
-     UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
-     */
- 
+
  
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -154,7 +116,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         completionHandler()
     }
     
-    
+    func localNotificationSettings() {
+        let notificationSettings: UIUserNotificationSettings! = UIApplication.sharedApplication().currentUserNotificationSettings()
+        
+        //Check if the settings have already been set, otherwise, set them
+        if notificationSettings.types == .None {
+            
+            //Set up notification actions
+            let sendMessageAction = UIMutableUserNotificationAction()
+            sendMessageAction.identifier = "sendMessage"
+            sendMessageAction.title = "Send"
+            sendMessageAction.activationMode = .Foreground
+            sendMessageAction.destructive = false
+            sendMessageAction.authenticationRequired = true
+            
+            let cancelMessageAction = UIMutableUserNotificationAction()
+            cancelMessageAction.identifier = "cancelMessage"
+            cancelMessageAction.title = "Cancel"
+            cancelMessageAction.activationMode = .Background
+            cancelMessageAction.destructive = true
+            cancelMessageAction.authenticationRequired = false
+            
+            //Set up the two different contexts
+            let defaultActions = [sendMessageAction, cancelMessageAction]
+            let minimalActions = [sendMessageAction, cancelMessageAction]
+            
+            //Set up the category
+            //This is only useful if you have multiple categories, but it is necessary every time
+            let notificationCategory = UIMutableUserNotificationCategory()
+            notificationCategory.identifier = "defaultCategory"
+            notificationCategory.setActions(defaultActions, forContext: .Default)
+            notificationCategory.setActions(minimalActions, forContext: .Minimal)
+            
+            // Register the notification settings.
+            let newNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: Set([notificationCategory]))
+            UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
+        }
+        
+    }
     
     
 }

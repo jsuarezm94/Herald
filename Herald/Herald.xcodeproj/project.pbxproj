@@ -27,6 +27,7 @@
 		53D7C5091CB6E8D900360A09 /* AddMessageTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C5081CB6E8D900360A09 /* AddMessageTemplateViewController.swift */; };
 		53D7C50B1CB7203C00360A09 /* OutboxMessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C50A1CB7203C00360A09 /* OutboxMessagesTableViewCell.swift */; };
 		53D7C50D1CB721DE00360A09 /* OutboxMessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C50C1CB721DE00360A09 /* OutboxMessagesTableViewController.swift */; };
+		53D7C5131CBC8A0100360A09 /* TestLocations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 53D7C5121CBC8A0000360A09 /* TestLocations.gpx */; };
 		68F78A071CB37A890096ED17 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F78A061CB37A890096ED17 /* ContactListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		53D7C5081CB6E8D900360A09 /* AddMessageTemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMessageTemplateViewController.swift; sourceTree = "<group>"; };
 		53D7C50A1CB7203C00360A09 /* OutboxMessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboxMessagesTableViewCell.swift; sourceTree = "<group>"; };
 		53D7C50C1CB721DE00360A09 /* OutboxMessagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboxMessagesTableViewController.swift; sourceTree = "<group>"; };
+		53D7C5121CBC8A0000360A09 /* TestLocations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestLocations.gpx; path = "../../../../Downloads/Geotify-Starter/Geotify/TestLocations.gpx"; sourceTree = "<group>"; };
 		68F78A061CB37A890096ED17 /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 		537381281CA5AF700004B596 = {
 			isa = PBXGroup;
 			children = (
+				53D7C5121CBC8A0000360A09 /* TestLocations.gpx */,
 				537381781CAE1A690004B596 /* Frameworks */,
 				537381331CA5AF710004B596 /* Herald */,
 				537381321CA5AF710004B596 /* Products */,
@@ -241,6 +244,7 @@
 			files = (
 				5373813F1CA5AF710004B596 /* LaunchScreen.storyboard in Resources */,
 				5373813C1CA5AF710004B596 /* Assets.xcassets in Resources */,
+				53D7C5131CBC8A0100360A09 /* TestLocations.gpx in Resources */,
 				5373813A1CA5AF710004B596 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -64,7 +64,6 @@ class AddGeotificationViewController: UITableViewController {
         mapView.centerCoordinate = CLLocationCoordinate2D(latitude: 37.13283999999998, longitude: -95.785579999999996)
         noteTextField.text! = ""
         radiusTextField.text! = "100"
-        
         addButton.enabled = false
 
     }

@@ -30,8 +30,16 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         loadAllGeotifications()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleSendMessageNotification", name: "sendMessageNotification", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCancelMessageNotification", name: "CancelMessageNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCancelMessageNotification", name: "cancelMessageNotification", object: nil)
         
+    }
+    
+    func handleSendMessageNotification() {
+        print("SEND")
+    }
+    
+    func handleCancelMessageNotification() {
+        print("Cancel")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
