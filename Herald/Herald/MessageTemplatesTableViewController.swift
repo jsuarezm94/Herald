@@ -10,13 +10,14 @@ import UIKit
 
 
 class MessageTemplatesTableViewController: UITableViewController {
-
+    
     var templates = [String]()
     var templatesList = MessageTemplates(templatesArray: [String]())
     
     let kArray = "messageTemplates"
 
     var selectedMessage : String?
+    var flag : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,24 +106,29 @@ class MessageTemplatesTableViewController: UITableViewController {
     }
     */
 
-
+    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            
-            tableView.beginUpdates()
-            
-            // Delete the row from the data source
-            templatesList.templatesArray.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
-            tableView.endUpdates()
-            
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        if (flag != 1) {
+            if editingStyle == .Delete {
+                
+                tableView.beginUpdates()
+                
+                // Delete the row from the data source
+                templatesList.templatesArray.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                
+                NSUserDefaults.standardUserDefaults().setObject(templatesList.templatesArray, forKey: "messageTemplates")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                
+                tableView.endUpdates()
+                
+            } else if editingStyle == .Insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
+        }
     }
-
+    */
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {

@@ -27,6 +27,7 @@
 		53D7C5091CB6E8D900360A09 /* AddMessageTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C5081CB6E8D900360A09 /* AddMessageTemplateViewController.swift */; };
 		53D7C50B1CB7203C00360A09 /* OutboxMessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C50A1CB7203C00360A09 /* OutboxMessagesTableViewCell.swift */; };
 		53D7C50D1CB721DE00360A09 /* OutboxMessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C50C1CB721DE00360A09 /* OutboxMessagesTableViewController.swift */; };
+		53D7C5151CBEDD1100360A09 /* TestLocations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 53D7C5141CBEDD1100360A09 /* TestLocations.gpx */; };
 		68DC81A21CBD9FD8004A78EC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A11CBD9FD8004A78EC /* Group.swift */; };
 		68DC81A41CBDA043004A78EC /* GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A31CBDA043004A78EC /* GroupList.swift */; };
 		68DC81A61CBDA1B8004A78EC /* GroupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A51CBDA1B8004A78EC /* GroupListTableViewController.swift */; };
@@ -57,6 +58,7 @@
 		53D7C5081CB6E8D900360A09 /* AddMessageTemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMessageTemplateViewController.swift; sourceTree = "<group>"; };
 		53D7C50A1CB7203C00360A09 /* OutboxMessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboxMessagesTableViewCell.swift; sourceTree = "<group>"; };
 		53D7C50C1CB721DE00360A09 /* OutboxMessagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboxMessagesTableViewController.swift; sourceTree = "<group>"; };
+		53D7C5141CBEDD1100360A09 /* TestLocations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestLocations.gpx; path = "../../../../Downloads/Geotify-Starter 2/Geotify/TestLocations.gpx"; sourceTree = "<group>"; };
 		68DC81A11CBD9FD8004A78EC /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		68DC81A31CBDA043004A78EC /* GroupList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupList.swift; sourceTree = "<group>"; };
 		68DC81A51CBDA1B8004A78EC /* GroupListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListTableViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		537381281CA5AF700004B596 = {
 			isa = PBXGroup;
 			children = (
+				53D7C5141CBEDD1100360A09 /* TestLocations.gpx */,
 				537381781CAE1A690004B596 /* Frameworks */,
 				537381331CA5AF710004B596 /* Herald */,
 				537381321CA5AF710004B596 /* Products */,
@@ -224,7 +227,7 @@
 				TargetAttributes = {
 					537381301CA5AF710004B596 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 3N8RGWZYNJ;
+						DevelopmentTeam = 8AZGJQ7TGZ;
 					};
 				};
 			};
@@ -253,6 +256,7 @@
 			files = (
 				5373813F1CA5AF710004B596 /* LaunchScreen.storyboard in Resources */,
 				5373813C1CA5AF710004B596 /* Assets.xcassets in Resources */,
+				53D7C5151CBEDD1100360A09 /* TestLocations.gpx in Resources */,
 				5373813A1CA5AF710004B596 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,10 +400,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Herald/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Herald;
+				PRODUCT_BUNDLE_IDENTIFIER = "Herald-v2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -408,10 +414,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Herald/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Herald;
+				PRODUCT_BUNDLE_IDENTIFIER = "Herald-v2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

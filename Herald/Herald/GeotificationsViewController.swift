@@ -9,10 +9,11 @@
 import UIKit
 import MapKit
 import CoreLocation
+//import MessageUI
 
 let kSavedItemsKey = "savedItems"
 
-class GeotificationsViewController: UIViewController, AddGeotificationsViewControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
+class GeotificationsViewController: UIViewController, AddGeotificationsViewControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate { //MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -28,24 +29,117 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         locationManager.requestAlwaysAuthorization()
         // 3
         
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "sendMessage", name: "sendMessageNotification", object: nil)
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "cancelMessage", name: "cancelMessageNotification", object: nil)
+        
+        loadAllGeotifications()
+        
+        setupNotificationSettings()
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleSendMessageNotification", name: "sendMessageNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCancelMessageNotification", name: "cancelMessageNotification", object: nil)
-        
+
+
     }
     
+    func handleSendMessageNotification() {
+        print("send message button")
+    }
+    
+    func handleCancelMessageNotification() {
+        print("cancel message button")
+    }
+    
+    func setupNotificationSettings() {
+        // Specify the notification types.
+        var notificationTypes: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Sound]
+        
+        //Set up notification actions
+        let sendMessageAction = UIMutableUserNotificationAction()
+        sendMessageAction.identifier = "sendMessage"
+        sendMessageAction.title = "Send"
+        sendMessageAction.activationMode = .Foreground
+        sendMessageAction.destructive = false
+        sendMessageAction.authenticationRequired = true
+        
+        let cancelMessageAction = UIMutableUserNotificationAction()
+        cancelMessageAction.identifier = "cancelMessage"
+        cancelMessageAction.title = "Cancel"
+        cancelMessageAction.activationMode = .Background
+        cancelMessageAction.destructive = true
+        cancelMessageAction.authenticationRequired = false
+        
+        let actionsArray = NSArray(objects: sendMessageAction, cancelMessageAction)
+        let actionsArrayMinimal = NSArray(objects: sendMessageAction, cancelMessageAction)
+        
+        // Specify the category related to the above actions.
+        var messageCategory = UIMutableUserNotificationCategory()
+        messageCategory.identifier = "messageCategory"
+        messageCategory.setActions(actionsArray as! [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Default)
+        messageCategory.setActions(actionsArrayMinimal as! [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Minimal)
+
+        let categoriesForSettings = NSSet(objects: messageCategory)
+
+        // Register the notification settings.
+        let newNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: categoriesForSettings as! Set<UIUserNotificationCategory>)
+        UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
+    }
+    
+    /*
     override func viewDidAppear(animated: Bool) {
         loadAllGeotifications()
         updateGeotificationsCount()
     }
-    
-    func handleSendMessageNotification() {
+    */
+    /*
+    func sendMessage() {
         print("SEND")
+        self.shareiMessage()
     }
     
-    func handleCancelMessageNotification() {
+    func cancelMessage() {
         print("Cancel")
     }
     
+    func shareiMessage()
+    {
+        let controller: MFMessageComposeViewController=MFMessageComposeViewController()
+        if(MFMessageComposeViewController.canSendText())
+        {
+            controller.body = "TEST"
+            
+            let sendTo : [String]? = ["7088376127"]
+            
+            controller.recipients = sendTo
+            
+            controller.delegate=self
+            controller.messageComposeDelegate=self
+            self.presentViewController(controller, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Error", message: "Text messaging is not available", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult)
+    {
+        switch result.rawValue
+        {
+        case MessageComposeResultCancelled.rawValue:
+            Utilities.invokeAlertMethod("Warning", strBody: "Message cancelled", delegate: self)
+        case MessageComposeResultFailed.rawValue:
+            Utilities.invokeAlertMethod("Warning", strBody: "Message failed", delegate: self)
+        case MessageComposeResultSent.rawValue:
+            Utilities.invokeAlertMethod("Success", strBody: "Message sent", delegate: self)
+        default:
+            Utilities.invokeAlertMethod("Warning", strBody: "error", delegate: self)
+        }
+        self.dismissViewControllerAnimated(false, completion: nil)
+    }
+    */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if let outboxListTableViewController = segue.destinationViewController as? OutboxMessagesTableViewController {
@@ -53,8 +147,6 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         }
         
     }
-    
-    
     
     // MARK: Loading and saving functions
     

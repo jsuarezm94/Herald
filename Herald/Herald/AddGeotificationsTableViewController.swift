@@ -8,13 +8,14 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 protocol AddGeotificationsViewControllerDelegate {
     func addGeotificationViewController(controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D,
         radius: Double, identifier: String, note: String, eventType: EventType)
 }
 
-class AddGeotificationViewController: UITableViewController, UITextFieldDelegate {
+class AddGeotificationViewController: UITableViewController, UITextFieldDelegate, CLLocationManagerDelegate {
     
     
     @IBOutlet var addButton: UIBarButtonItem!
@@ -30,8 +31,13 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     
     var delegate: AddGeotificationsViewControllerDelegate!
     
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
         
         navigationItem.rightBarButtonItems = [addButton, zoomButton]
         addButton.enabled = false
@@ -44,6 +50,10 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         self.radiusTextField.delegate = self
         self.noteTextField.delegate = self
         self.contactTextField.delegate = self
+    }
+    
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        mapView.showsUserLocation = (status == .AuthorizedAlways)
     }
     
     @IBAction func textFieldEditingChanged(sender: UITextField) {
@@ -84,6 +94,10 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if let templatesVc = segue.destinationViewController as? MessageTemplatesTableViewController {
+            templatesVc.flag = 1
+        }
 
     }
     

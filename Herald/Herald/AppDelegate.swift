@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.delegate = self                // Add this line
         locationManager.requestAlwaysAuthorization()   // And this one
 
+        //application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil))
         UIApplication.sharedApplication().cancelAllLocalNotifications()
         
         if let tabBarController = window?.rootViewController as? UITabBarController,
@@ -31,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             createVc.delegate = mapVc
         }
         
-        self.localNotificationSettings()
+        //self.localNotificationSettings()
         
         return true
     }
@@ -71,9 +72,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             // Otherwise present a local notification
             let notification = UILocalNotification()
             notification.alertBody = notefromRegionIdentifier(region.identifier)
-            notification.soundName = "Default";
+            notification.soundName = "Default"
+            //notification.alertAction = "Send"
+            //notification.category = "geotifyCategory"
             notification.alertAction = "Send"
-            notification.category = "geotifyCategory"
+            notification.category = "messageCategory"
             UIApplication.sharedApplication().presentLocalNotificationNow(notification)
         }
     }
@@ -90,20 +93,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
     }
     
-    
+    /*
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
         
-        print(notificationSettings.types.rawValue)
+        //print(notificationSettings.types.rawValue)
     }
-    
-    
+    */
+    /*
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         // Do something serious in a real app.
         print("Received Local Notification:")
         print(notification.alertBody)
     }
-    
-    
+    */
+    /*
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
         
         if identifier == "sendMessage" {
@@ -115,12 +118,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         completionHandler()
     }
-    
+    */
+    /*
     func localNotificationSettings() {
         let notificationSettings: UIUserNotificationSettings! = UIApplication.sharedApplication().currentUserNotificationSettings()
         
         //Check if the settings have already been set, otherwise, set them
-        if notificationSettings.types == .None {
+        //if notificationSettings.types == .None {
             
             //Set up notification actions
             let sendMessageAction = UIMutableUserNotificationAction()
@@ -143,32 +147,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             
             //Set up the category
             //This is only useful if you have multiple categories, but it is necessary every time
-            let notificationCategory = UIMutableUserNotificationCategory()
-            notificationCategory.identifier = "defaultCategory"
-            notificationCategory.setActions(defaultActions, forContext: .Default)
-            notificationCategory.setActions(minimalActions, forContext: .Minimal)
+            let geotifyCategory = UIMutableUserNotificationCategory()
+            geotifyCategory.identifier = "geotifyCateogry"
+            geotifyCategory.setActions(defaultActions, forContext: .Default)
+            geotifyCategory.setActions(minimalActions, forContext: .Minimal)
             
             // Register the notification settings.
-            let newNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: Set([notificationCategory]))
+            let newNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: Set([geotifyCategory]))
             UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
-        }
+        //}
         
     }
+    */
     
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        
+        if identifier == "sendMessage" {
+            NSNotificationCenter.defaultCenter().postNotificationName("sendMessageNotification", object: nil)
+        }
+        else if identifier == "cancelMessage" {
+            NSNotificationCenter.defaultCenter().postNotificationName("cancelMessageNotification", object: nil)
+        }
+        
+        completionHandler()
+    }
     
-}
-
-
-func notefromRegionIdentifier(identifier: String) -> String? {
-    if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
-        for savedItem in savedItems {
-            if let geotification = NSKeyedUnarchiver.unarchiveObjectWithData(savedItem as! NSData) as? Geotification {
-                if geotification.identifier == identifier {
-                    return geotification.note
+    func notefromRegionIdentifier(identifier: String) -> String? {
+        if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
+            for savedItem in savedItems {
+                if let geotification = NSKeyedUnarchiver.unarchiveObjectWithData(savedItem as! NSData) as? Geotification {
+                    if geotification.identifier == identifier {
+                        return geotification.note
+                    }
                 }
             }
         }
+        return nil
     }
-    return nil
+    
 }
+
+
+
 
