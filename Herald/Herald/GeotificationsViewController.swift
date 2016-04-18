@@ -9,11 +9,11 @@
 import UIKit
 import MapKit
 import CoreLocation
-//import MessageUI
+import MessageUI
 
 let kSavedItemsKey = "savedItems"
 
-class GeotificationsViewController: UIViewController, AddGeotificationsViewControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate { //MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
+class GeotificationsViewController: UIViewController, AddGeotificationsViewControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UINavigationControllerDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -27,11 +27,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         locationManager.delegate = self
         // 2
         locationManager.requestAlwaysAuthorization()
-        // 3
-        
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "sendMessage", name: "sendMessageNotification", object: nil)
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "cancelMessage", name: "cancelMessageNotification", object: nil)
-        
+        // 3        
         loadAllGeotifications()
         
         setupNotificationSettings()
@@ -44,6 +40,19 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     
     func handleSendMessageNotification() {
         print("send message button")
+        /*
+        if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
+            for savedItem in savedItems {
+                if let geotification = NSKeyedUnarchiver.unarchiveObjectWithData(savedItem as! NSData) as? Geotification {
+                    if geotification.identifier == identifier {
+                        return geotification.note
+                    }
+                }
+            }
+        }
+        return nil
+        */
+        self.shareiMessage()
     }
     
     func handleCancelMessageNotification() {
@@ -84,23 +93,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         let newNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: categoriesForSettings as! Set<UIUserNotificationCategory>)
         UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
     }
-    
-    /*
-    override func viewDidAppear(animated: Bool) {
-        loadAllGeotifications()
-        updateGeotificationsCount()
-    }
-    */
-    /*
-    func sendMessage() {
-        print("SEND")
-        self.shareiMessage()
-    }
-    
-    func cancelMessage() {
-        print("Cancel")
-    }
-    
+
     func shareiMessage()
     {
         let controller: MFMessageComposeViewController=MFMessageComposeViewController()
@@ -139,7 +132,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         }
         self.dismissViewControllerAnimated(false, completion: nil)
     }
-    */
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if let outboxListTableViewController = segue.destinationViewController as? OutboxMessagesTableViewController {

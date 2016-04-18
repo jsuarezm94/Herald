@@ -22,8 +22,12 @@ class Utilities : NSObject {
     
     class func showSimpleAlertWithTitle(title: String!, message: String, viewController: UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let action = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
-        alert.addAction(action)
+        let action1 = UIAlertAction(title: "Send", style: .Default, handler: {
+            (alert: UIAlertAction!) in print("IN SEND HANDLER")
+        })
+        let action2 = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alert.addAction(action1)
+        alert.addAction(action2)
         viewController.presentViewController(alert, animated: true, completion: nil)
     }
     

@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.delegate = self                // Add this line
         locationManager.requestAlwaysAuthorization()   // And this one
 
-        //application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil))
         UIApplication.sharedApplication().cancelAllLocalNotifications()
         
         if let tabBarController = window?.rootViewController as? UITabBarController,
@@ -31,8 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let createVc = nav2.topViewController as? AddGeotificationViewController {
             createVc.delegate = mapVc
         }
-        
-        //self.localNotificationSettings()
         
         return true
     }
@@ -65,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if UIApplication.sharedApplication().applicationState == .Active {
             if let message = notefromRegionIdentifier(region.identifier) {
                 if let viewController = window?.rootViewController {
-                    Utilities.showSimpleAlertWithTitle(nil, message: message, viewController: viewController)
+                    Utilities.showSimpleAlertWithTitle("Message Reminder", message: message, viewController: viewController)
                 }
             }
         } else {
@@ -73,8 +70,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             let notification = UILocalNotification()
             notification.alertBody = notefromRegionIdentifier(region.identifier)
             notification.soundName = "Default"
-            //notification.alertAction = "Send"
-            //notification.category = "geotifyCategory"
             notification.alertAction = "Send"
             notification.category = "messageCategory"
             UIApplication.sharedApplication().presentLocalNotificationNow(notification)
@@ -99,66 +94,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         //print(notificationSettings.types.rawValue)
     }
     */
-    /*
+    
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         // Do something serious in a real app.
         print("Received Local Notification:")
         print(notification.alertBody)
     }
-    */
-    /*
-    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
-        
-        if identifier == "sendMessage" {
-            NSNotificationCenter.defaultCenter().postNotificationName("sendMessageNotification", object: nil)
-        }
-        else if identifier == "cancelMessage" {
-            NSNotificationCenter.defaultCenter().postNotificationName("cancelMessageNotification", object: nil)
-        }
-        
-        completionHandler()
-    }
-    */
-    /*
-    func localNotificationSettings() {
-        let notificationSettings: UIUserNotificationSettings! = UIApplication.sharedApplication().currentUserNotificationSettings()
-        
-        //Check if the settings have already been set, otherwise, set them
-        //if notificationSettings.types == .None {
-            
-            //Set up notification actions
-            let sendMessageAction = UIMutableUserNotificationAction()
-            sendMessageAction.identifier = "sendMessage"
-            sendMessageAction.title = "Send"
-            sendMessageAction.activationMode = .Foreground
-            sendMessageAction.destructive = false
-            sendMessageAction.authenticationRequired = true
-            
-            let cancelMessageAction = UIMutableUserNotificationAction()
-            cancelMessageAction.identifier = "cancelMessage"
-            cancelMessageAction.title = "Cancel"
-            cancelMessageAction.activationMode = .Background
-            cancelMessageAction.destructive = true
-            cancelMessageAction.authenticationRequired = false
-            
-            //Set up the two different contexts
-            let defaultActions = [sendMessageAction, cancelMessageAction]
-            let minimalActions = [sendMessageAction, cancelMessageAction]
-            
-            //Set up the category
-            //This is only useful if you have multiple categories, but it is necessary every time
-            let geotifyCategory = UIMutableUserNotificationCategory()
-            geotifyCategory.identifier = "geotifyCateogry"
-            geotifyCategory.setActions(defaultActions, forContext: .Default)
-            geotifyCategory.setActions(minimalActions, forContext: .Minimal)
-            
-            // Register the notification settings.
-            let newNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: Set([geotifyCategory]))
-            UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
-        //}
-        
-    }
-    */
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
         
