@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     let locationManager = CLLocationManager() // Add this statement
     
+    var geotificationRegion: CLRegion?
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         locationManager.delegate = self                // Add this line
@@ -60,15 +62,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func handleRegionEvent(region: CLRegion!) {
         // Show an alert if application is active
         if UIApplication.sharedApplication().applicationState == .Active {
-            if let message = notefromRegionIdentifier(region.identifier) {
+            if let message : [String] = notefromRegionIdentifier(region.identifier) {
                 if let viewController = window?.rootViewController {
-                    Utilities.showSimpleAlertWithTitle("Message Reminder", message: message, viewController: viewController)
+                    Utilities.showSimpleAlertWithTitle("Message Reminder", message: message[1], viewController: viewController)
                 }
             }
         } else {
             // Otherwise present a local notification
             let notification = UILocalNotification()
-            notification.alertBody = notefromRegionIdentifier(region.identifier)
+            //notification.alertBody = notefromRegionIdentifier(region.identifier)
+            let geotificationInfo = notefromRegionIdentifier(region.identifier)
+            notification.alertBody = geotificationInfo![1]
             notification.soundName = "Default"
             notification.alertAction = "Send"
             notification.category = "messageCategory"
@@ -78,12 +82,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         if region is CLCircularRegion {
+            geotificationRegion = region
             handleRegionEvent(region)
         }
     }
     
     func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
         if region is CLCircularRegion {
+            geotificationRegion = region
             handleRegionEvent(region)
         }
     }
@@ -104,21 +110,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
         
         if identifier == "sendMessage" {
-            NSNotificationCenter.defaultCenter().postNotificationName("sendMessageNotification", object: nil)
+            let geotificationInfo = notefromRegionIdentifier(geotificationRegion!.identifier)
+            let newNotification = NSNotification(name: "sendMessageNotification", object: geotificationInfo![0])
+            //print(geotificationInfo)
+            //let notificationDictionary = ["identifier": geotificationInfo![0]]
+            //let newNotification = NSNotification(name: "sendMessageNotification", object: notification.alertBody, userInfo: notificationDictionary)
+            NSNotificationCenter.defaultCenter().postNotification(newNotification)
         }
         else if identifier == "cancelMessage" {
-            NSNotificationCenter.defaultCenter().postNotificationName("cancelMessageNotification", object: nil)
+            let newNotification = NSNotification(name: "cancelMessageNotification", object: notification.alertBody)
+            //NSNotificationCenter.defaultCenter().postNotificationName("cancelMessageNotification", object: nil)
+            NSNotificationCenter.defaultCenter().postNotification(newNotification)
         }
         
         completionHandler()
     }
     
-    func notefromRegionIdentifier(identifier: String) -> String? {
+    //func notefromRegionIdentifier(identifier: String) -> String? {
+    func notefromRegionIdentifier(identifier: String) -> [String]? {
         if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
             for savedItem in savedItems {
                 if let geotification = NSKeyedUnarchiver.unarchiveObjectWithData(savedItem as! NSData) as? Geotification {
                     if geotification.identifier == identifier {
-                        return geotification.note
+                        
+                        /* MUST MAKE THIRD ARGUMENT geotification.contact as STRING */
+                        
+                        return [geotification.identifier,geotification.note,geotification.note]
+                        //return geotification.note
                     }
                 }
             }

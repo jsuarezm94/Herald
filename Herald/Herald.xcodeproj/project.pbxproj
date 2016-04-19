@@ -36,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2CA78749EADB9B7A1E7D2496 /* Pods-Herald.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Herald.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Herald/Pods-Herald.debug.xcconfig"; sourceTree = "<group>"; };
+		4DF4A8354DB3B8C1115A4217 /* Pods-Herald.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Herald.release.xcconfig"; path = "Pods/Target Support Files/Pods-Herald/Pods-Herald.release.xcconfig"; sourceTree = "<group>"; };
 		5318B4321CB1B57D0099CE55 /* MessageTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTemplates.swift; sourceTree = "<group>"; };
 		5318B4341CB1B5A50099CE55 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5318B4361CB1B6010099CE55 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				537381781CAE1A690004B596 /* Frameworks */,
 				537381331CA5AF710004B596 /* Herald */,
 				537381321CA5AF710004B596 /* Products */,
+				D3C945724991956A29C9C811 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,6 +196,15 @@
 				537381801CAE1DD00004B596 /* AddGeotificationsTableViewController.swift */,
 			);
 			name = "Compose Message";
+			sourceTree = "<group>";
+		};
+		D3C945724991956A29C9C811 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CA78749EADB9B7A1E7D2496 /* Pods-Herald.debug.xcconfig */,
+				4DF4A8354DB3B8C1115A4217 /* Pods-Herald.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +409,7 @@
 		};
 		537381441CA5AF710004B596 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CA78749EADB9B7A1E7D2496 /* Pods-Herald.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -411,6 +424,7 @@
 		};
 		537381451CA5AF710004B596 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DF4A8354DB3B8C1115A4217 /* Pods-Herald.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

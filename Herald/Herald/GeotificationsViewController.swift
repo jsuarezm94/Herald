@@ -32,31 +32,45 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         
         setupNotificationSettings()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleSendMessageNotification", name: "sendMessageNotification", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCancelMessageNotification", name: "cancelMessageNotification", object: nil)
-
-
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleSendMessageNotification), name: "sendMessageNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleCancelMessageNotification), name: "cancelMessageNotification", object: nil)
     }
     
-    func handleSendMessageNotification() {
+    func handleSendMessageNotification(notification: NSNotification) {
         print("send message button")
-        /*
-        if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
-            for savedItem in savedItems {
-                if let geotification = NSKeyedUnarchiver.unarchiveObjectWithData(savedItem as! NSData) as? Geotification {
-                    if geotification.identifier == identifier {
-                        return geotification.note
-                    }
-                }
+
+        let text = notification.object as! String
+        print("TEXT: ", text)
+        // USE text identifier to select proper geotification
+        
+        //self.shareiMessage()
+        
+        //let text = notification.userInfo!["text"] as! String
+        //let text = notification.object as! String
+/*
+        let notificationInfo:Dictionary<String,String> = notification.userInfo as! Dictionary<String,String>
+        let notificationIdentifier = notificationInfo["identifier"]
+        
+        print("IDENTIFIER: ", notificationIdentifier)
+        
+        for geotification in geotifications {
+            if (geotification.identifier == notification.userInfo![geotification.note]) {
+                print(geotification.identifier)
             }
         }
-        return nil
-        */
-        self.shareiMessage()
+*/
+        
+        /* HOW TO GET THE RIGHT GEOTIFICATION TO PREPOPULATE THE FIELDS? */
+        
+        /* MUST DELETE THE GEOTIFICAITON ONCE THE USER HANDLES THE NOTIFICATION */
     }
     
     func handleCancelMessageNotification() {
         print("cancel message button")
+        
+        /* HOW TO GET THE RIGHT GEOTIFICATION? */
+        
+        /* MUST DELETE THE GEOTIFICAITON ONCE THE USER HANDLES THE NOTIFICATION */
     }
     
     func setupNotificationSettings() {
