@@ -20,9 +20,10 @@ class Utilities : NSObject {
         alert.show()
     }
     
+    
     class func showSimpleAlertWithTitle(title: String!, message: String, viewController: UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let action1 = UIAlertAction(title: "Send", style: .Default, handler: {
+        let action = UIAlertAction(title: "Dismiss reminder", style: .Default, handler: {
             (alert: UIAlertAction!) in print("IN SEND HANDLER")
             /* THIS IS WHERE I HAVE TO CALL iMESSAGE FUNCTION */
             
@@ -30,14 +31,14 @@ class Utilities : NSObject {
             
             /* MUST DELETE THE GEOTIFICAITON ONCE THE USER HANDLES THE NOTIFICATION */
         })
-        let action2 = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
-            (alert: UIAlertAction!) in print("IN CANCEL HANDLER")
+        //let action2 = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+        //    (alert: UIAlertAction!) in print("IN CANCEL HANDLER")
             /* HOW TO GET THE RIGHT GEOTIFICATION? */
             
             /* MUST DELETE THE GEOTIFICAITON ONCE THE USER HANDLES THE NOTIFICATION */
-        })
-        alert.addAction(action1)
-        alert.addAction(action2)
+        //})
+        alert.addAction(action)
+        //alert.addAction(action2)
         viewController.presentViewController(alert, animated: true, completion: nil)
     }
     

@@ -66,7 +66,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     
     func setupNotificationSettings() {
         // Specify the notification types.
-        var notificationTypes: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Sound]
+        let notificationTypes: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Sound]
         
         //Set up notification actions
         let sendMessageAction = UIMutableUserNotificationAction()
@@ -87,15 +87,15 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         let actionsArrayMinimal = NSArray(objects: sendMessageAction, cancelMessageAction)
         
         // Specify the category related to the above actions.
-        var messageCategory = UIMutableUserNotificationCategory()
+        let messageCategory = UIMutableUserNotificationCategory()
         messageCategory.identifier = "messageCategory"
-        messageCategory.setActions(actionsArray as! [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Default)
-        messageCategory.setActions(actionsArrayMinimal as! [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Minimal)
+        messageCategory.setActions(actionsArray as? [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Default)
+        messageCategory.setActions(actionsArrayMinimal as? [UIUserNotificationAction], forContext: UIUserNotificationActionContext.Minimal)
 
         let categoriesForSettings = NSSet(objects: messageCategory)
 
         // Register the notification settings.
-        let newNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: categoriesForSettings as! Set<UIUserNotificationCategory>)
+        let newNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: categoriesForSettings as? Set<UIUserNotificationCategory>)
         UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
     }
 
@@ -172,6 +172,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         geotifications.removeAtIndex(flag)
         removeGeotification(geoToRemove!)
         saveAllGeotifications()
+        loadAllGeotifications()
     }
     
     // MARK: Loading and saving functions
@@ -216,7 +217,6 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         mapView.removeAnnotation(geotification)
         removeRadiusOverlayForGeotification(geotification)
         updateGeotificationsCount()
-        //saveAllGeotifications()
     }
     
     func updateGeotificationsCount() {

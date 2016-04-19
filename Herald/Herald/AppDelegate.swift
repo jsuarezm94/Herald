@@ -64,7 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if UIApplication.sharedApplication().applicationState == .Active {
             if let message : [String] = notefromRegionIdentifier(region.identifier) {
                 if let viewController = window?.rootViewController {
-                    Utilities.showSimpleAlertWithTitle("Message Reminder", message: message[1], viewController: viewController)
+                    let messageForAlert = "Reminder to send message \"\(message[1])\" to _________"
+                    Utilities.showSimpleAlertWithTitle("Geotification Alert", message: messageForAlert, viewController: viewController)
                 }
             }
         } else {
