@@ -41,47 +41,27 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
 
         let notificationIdentifier = notification.object as! String
         print("IDENTIFIER: ", notificationIdentifier)
-                
+        
         if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
             for savedItem in savedItems {
                 if let geotification = NSKeyedUnarchiver.unarchiveObjectWithData(savedItem as! NSData) as? Geotification {
                     if geotification.identifier == notificationIdentifier {
-                        print(geotification)
-                        self.removeGeotification(geotification)
+                        print("Identifier: ", geotification.identifier)
+                        self.messageRemoveGeotification(notificationIdentifier)
                         self.shareiMessage(geotification)
                     }
                 }
             }
         }
-        
-        //self.shareiMessage()
-        
-        //let text = notification.userInfo!["text"] as! String
-        //let text = notification.object as! String
-/*
-        let notificationInfo:Dictionary<String,String> = notification.userInfo as! Dictionary<String,String>
-        let notificationIdentifier = notificationInfo["identifier"]
-        
-        print("IDENTIFIER: ", notificationIdentifier)
-        
-        for geotification in geotifications {
-            if (geotification.identifier == notification.userInfo![geotification.note]) {
-                print(geotification.identifier)
-            }
-        }
-*/
-        
-        /* HOW TO GET THE RIGHT GEOTIFICATION TO PREPOPULATE THE FIELDS? */
-        
+
         /* MUST DELETE THE GEOTIFICAITON ONCE THE USER HANDLES THE NOTIFICATION */
     }
     
     func handleCancelMessageNotification() {
         print("cancel message button")
         
-        /* HOW TO GET THE RIGHT GEOTIFICATION? */
-        
         /* MUST DELETE THE GEOTIFICAITON ONCE THE USER HANDLES THE NOTIFICATION */
+
     }
     
     func setupNotificationSettings() {
@@ -166,6 +146,34 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         
     }
     
+    func messageRemoveGeotification(identifier: String) {
+        print("REMOVING GEOTIFICATION")
+        
+        var count=0;
+        var flag=0;
+        var geoToRemove : Geotification?
+        
+        if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
+            for savedItem in savedItems {
+                if let geotification = NSKeyedUnarchiver.unarchiveObjectWithData(savedItem as! NSData) as? Geotification {
+                    if geotification.identifier == identifier {
+                        flag=count;
+                        geoToRemove = geotification
+                        //print(geoToRemove!.note)
+                        //stopMonitoringGeotification(geoToRemove!)
+                        //geotifications.removeAtIndex(count)
+                    }
+                    count += 1;
+                }
+            }
+        }
+        
+        stopMonitoringGeotification(geoToRemove!)
+        geotifications.removeAtIndex(flag)
+        removeGeotification(geoToRemove!)
+        saveAllGeotifications()
+    }
+    
     // MARK: Loading and saving functions
     
     func loadAllGeotifications() {
@@ -200,7 +208,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     }
     
     func removeGeotification(geotification: Geotification) {
-        print("REMOVING GEOTIFICATION")
+        
         if let indexInArray = geotifications.indexOf(geotification) {
             geotifications.removeAtIndex(indexInArray)
         }
@@ -208,6 +216,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         mapView.removeAnnotation(geotification)
         removeRadiusOverlayForGeotification(geotification)
         updateGeotificationsCount()
+        //saveAllGeotifications()
     }
     
     func updateGeotificationsCount() {
@@ -263,6 +272,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     }
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+
         // Delete geotification
         let geotification = view.annotation as! Geotification
         stopMonitoringGeotification(geotification)   // Add this statement

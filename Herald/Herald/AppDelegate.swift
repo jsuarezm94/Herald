@@ -69,14 +69,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             }
         } else {
             // Otherwise present a local notification
-            let notification = UILocalNotification()
-            //notification.alertBody = notefromRegionIdentifier(region.identifier)
-            let geotificationInfo = notefromRegionIdentifier(region.identifier)
-            notification.alertBody = geotificationInfo![1]
-            notification.soundName = "Default"
-            notification.alertAction = "Send"
-            notification.category = "messageCategory"
-            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+            if let geotificationInfo : [String] = notefromRegionIdentifier(region.identifier) {
+                let notification = UILocalNotification()
+                //notification.alertBody = notefromRegionIdentifier(region.identifier)
+                notification.alertBody = geotificationInfo[1]
+                notification.soundName = "Default"
+                notification.alertAction = "Send"
+                notification.category = "messageCategory"
+                UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+
+            }
         }
     }
     
@@ -112,14 +114,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if identifier == "sendMessage" {
             let geotificationInfo = notefromRegionIdentifier(geotificationRegion!.identifier)
             let newNotification = NSNotification(name: "sendMessageNotification", object: geotificationInfo![0])
-            //print(geotificationInfo)
-            //let notificationDictionary = ["identifier": geotificationInfo![0]]
-            //let newNotification = NSNotification(name: "sendMessageNotification", object: notification.alertBody, userInfo: notificationDictionary)
             NSNotificationCenter.defaultCenter().postNotification(newNotification)
         }
         else if identifier == "cancelMessage" {
             let newNotification = NSNotification(name: "cancelMessageNotification", object: notification.alertBody)
-            //NSNotificationCenter.defaultCenter().postNotificationName("cancelMessageNotification", object: nil)
             NSNotificationCenter.defaultCenter().postNotification(newNotification)
         }
         
@@ -132,11 +130,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             for savedItem in savedItems {
                 if let geotification = NSKeyedUnarchiver.unarchiveObjectWithData(savedItem as! NSData) as? Geotification {
                     if geotification.identifier == identifier {
-                        
-                        /* MUST MAKE THIRD ARGUMENT geotification.contact as STRING */
-                        
-                        return [geotification.identifier,geotification.note,geotification.note]
-                        //return geotification.note
+                        print("NOTE: ",geotification.note)
+                        print("IDENTIFIER: ", geotification.identifier)
+                        return [geotification.identifier,geotification.note]
                     }
                 }
             }

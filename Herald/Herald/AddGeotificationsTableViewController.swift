@@ -77,7 +77,9 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     
     func resetInterface() {
         eventTypeSegmentedControl.selectedSegmentIndex = 0
+        //let span = MKCoordinateSpanMake(0.075, 0.075)
         mapView.centerCoordinate = CLLocationCoordinate2D(latitude: 37.13283999999998, longitude: -95.785579999999996)
+        //ZOOM
         noteTextField.text! = ""
         radiusTextField.text! = "100"
         addButton.enabled = false
