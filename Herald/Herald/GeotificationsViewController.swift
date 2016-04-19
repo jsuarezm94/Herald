@@ -39,9 +39,20 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     func handleSendMessageNotification(notification: NSNotification) {
         print("send message button")
 
-        let text = notification.object as! String
-        print("TEXT: ", text)
-        // USE text identifier to select proper geotification
+        let notificationIdentifier = notification.object as! String
+        print("IDENTIFIER: ", notificationIdentifier)
+                
+        if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
+            for savedItem in savedItems {
+                if let geotification = NSKeyedUnarchiver.unarchiveObjectWithData(savedItem as! NSData) as? Geotification {
+                    if geotification.identifier == notificationIdentifier {
+                        print(geotification)
+                        self.removeGeotification(geotification)
+                        self.shareiMessage(geotification)
+                    }
+                }
+            }
+        }
         
         //self.shareiMessage()
         
@@ -108,12 +119,12 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
     }
 
-    func shareiMessage()
+    func shareiMessage(notification: Geotification)
     {
         let controller: MFMessageComposeViewController=MFMessageComposeViewController()
         if(MFMessageComposeViewController.canSendText())
         {
-            controller.body = "TEST"
+            controller.body = notification.note
             
             let sendTo : [String]? = ["7088376127"]
             
@@ -189,6 +200,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     }
     
     func removeGeotification(geotification: Geotification) {
+        print("REMOVING GEOTIFICATION")
         if let indexInArray = geotifications.indexOf(geotification) {
             geotifications.removeAtIndex(indexInArray)
         }
