@@ -8,7 +8,9 @@
 
 import Foundation
 
-class GroupList {
+let groupEntrieskey = "groupEntries"
+
+class GroupList: NSObject, NSCoding {
     
     var entries: [Group]
     
@@ -36,4 +38,17 @@ class GroupList {
     func removeObject(index: Int) -> Group? {
         return entries.removeAtIndex(index)
     }
+    
+    
+    //MARK: NSCoding
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(entries, forKey: groupEntrieskey)
+    }
+    
+    required convenience init(coder aDecoder: NSCoder) {
+        let entries = aDecoder.decodeObjectForKey(groupEntrieskey) as! [Group]
+        self.init(entries: entries)
+    }
+    
+    
 }
