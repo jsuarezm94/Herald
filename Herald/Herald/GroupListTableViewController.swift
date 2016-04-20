@@ -8,14 +8,35 @@
 
 import UIKit
 
-class GroupListTableViewController: UITableViewController {
+class GroupListTableViewController: UITableViewController, AddedContactsDelegate, RemovedContactsDelegate {
 
     let newGroupSegueIdentifier = "newGroup"
     let groupDetailSegueIdentifier = "groupDetail"
     var groups: GroupList = GroupList(entries: [])
     
+    
+    
+    func groupModifiedAddedContacts(controller: GroupDetailTableViewController, didAddGroup group: Group) {
+        let indexPath = self.tableView.indexPathForSelectedRow
+        groups.addGroupAtIndex(group, index: indexPath!.row)
+        saveGroups()
+    }
+    
+    func groupModifiedRemovedContacts(controller: GroupDetailTableViewController, didRemoveGroup group: Group) {
+        let indexPath = self.tableView.indexPathForSelectedRow
+        groups.addGroupAtIndex(group, index: indexPath!.row)
+        saveGroups()
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if let savedGroups = loadGroups() {
+            groups = savedGroups
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -58,6 +79,8 @@ class GroupListTableViewController: UITableViewController {
                 indexPath = self.tableView.indexPathForCell(cell),
                 entry = groups.entry(indexPath.row) {
                 destVC.group = entry
+                destVC.addedContactsDelegate = self
+                destVC.removedContactsDelegate = self
             }
         }
     }
@@ -96,9 +119,24 @@ class GroupListTableViewController: UITableViewController {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade) //delete row from view
             tableView.endUpdates()
             
+            saveGroups()
+            
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    
+    
+    //MARK: NSCoding
+    
+    //save the groups--just the groups, not the contacts in each
+    func saveGroups() {
+        NSKeyedArchiver.archiveRootObject(groups, toFile: GroupList.archiveURL.path!)
+    }
+    
+    //load the groups
+    func loadGroups() -> GroupList? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(GroupList.archiveURL.path!) as? GroupList
     }
     
 
