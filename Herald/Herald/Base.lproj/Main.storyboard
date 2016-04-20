@@ -308,7 +308,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact(s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3R-yl-CAv">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipients:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3R-yl-CAv">
                                                     <rect key="frame" x="8" y="11" width="100" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="5zz-xD-Hgm"/>
@@ -345,6 +345,13 @@
                                                         <action selector="textFieldEditingChanged:" destination="mvS-3g-Zyi" eventType="editingChanged" id="5bs-pq-l0o"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffq-vL-fdC">
+                                                    <rect key="frame" x="213" y="42" width="46" height="30"/>
+                                                    <state key="normal" title="Add Contacts"/>
+                                                    <connections>
+                                                        <action selector="contactsButton:" destination="mvS-3g-Zyi" eventType="touchUpInside" id="gAg-j7-T4W"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="4lt-D5-xxz" firstAttribute="centerY" secondItem="E3R-yl-CAv" secondAttribute="centerY" id="LA5-kG-x9J"/>
@@ -352,6 +359,8 @@
                                                 <constraint firstItem="27B-UW-nQW" firstAttribute="top" secondItem="4lt-D5-xxz" secondAttribute="bottom" constant="5" id="atw-EG-wj5"/>
                                                 <constraint firstItem="E3R-yl-CAv" firstAttribute="top" secondItem="ceO-HT-ey8" secondAttribute="topMargin" constant="3" id="bpG-b0-N0r"/>
                                                 <constraint firstItem="27B-UW-nQW" firstAttribute="leading" secondItem="4lt-D5-xxz" secondAttribute="leading" id="eL9-wr-ytv"/>
+                                                <constraint firstItem="ffq-vL-fdC" firstAttribute="centerY" secondItem="27B-UW-nQW" secondAttribute="centerY" id="plL-wt-waz"/>
+                                                <constraint firstItem="ffq-vL-fdC" firstAttribute="leading" secondItem="27B-UW-nQW" secondAttribute="trailing" constant="50" id="vlS-sv-zF0"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="4lt-D5-xxz" secondAttribute="trailing" constant="15" id="w2L-bg-dmA"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="E3R-yl-CAv" secondAttribute="leading" id="z60-uy-voa"/>
                                             </constraints>
