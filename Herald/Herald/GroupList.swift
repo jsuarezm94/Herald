@@ -26,6 +26,10 @@ class GroupList: NSObject, NSCoding {
         entries.append(entry)
     }
     
+    func addGroupAtIndex(entry: Group, index: Int) {
+        self.entries[index] = entry
+    }
+    
     func entry(index: Int) -> Group? {
         if index >= 0 && index < count {
             return entries[index]
