@@ -226,12 +226,12 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     
     // MARK: AddGeotificationViewControllerDelegate
     
-    func addGeotificationViewController(controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: EventType) {
+    func addGeotificationViewController(controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: EventType, recipients: [Contact]) {
         controller.dismissViewControllerAnimated(true, completion: nil)
         // 1
         let clampedRadius = (radius > locationManager.maximumRegionMonitoringDistance) ? locationManager.maximumRegionMonitoringDistance : radius
         
-        let geotification = Geotification(coordinate: coordinate, radius: clampedRadius, identifier: identifier, note: note, eventType: eventType)
+        let geotification = Geotification(coordinate: coordinate, radius: clampedRadius, identifier: identifier, note: note, eventType: eventType, recipients: recipients)
         addGeotification(geotification)
         // 2
         startMonitoringGeotification(geotification)

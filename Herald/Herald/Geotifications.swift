@@ -16,6 +16,7 @@ let kGeotificationRadiusKey = "radius"
 let kGeotificationIdentifierKey = "identifier"
 let kGeotificationNoteKey = "note"
 let kGeotificationEventTypeKey = "eventType"
+let kGeotificationRecipientsKey = "recipients"
 
 enum EventType: Int {
     case OnEntry = 0
@@ -29,6 +30,7 @@ class Geotification: NSObject, NSCoding, MKAnnotation {
     var identifier: String
     var note: String
     var eventType: EventType
+    var recipients: [Contact]
     
     var title: String? {
         if note.isEmpty {
@@ -50,12 +52,13 @@ class Geotification: NSObject, NSCoding, MKAnnotation {
         return "\(radius)m"
     }
     
-    init(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, identifier: String, note: String, eventType: EventType) {
+    init(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, identifier: String, note: String, eventType: EventType, recipients: [Contact]) {
         self.coordinate = coordinate
         self.radius = radius
         self.identifier = identifier
         self.note = note
         self.eventType = eventType
+        self.recipients = recipients
     }
     
     // MARK: NSCoding
@@ -68,6 +71,7 @@ class Geotification: NSObject, NSCoding, MKAnnotation {
         identifier = decoder.decodeObjectForKey(kGeotificationIdentifierKey) as! String
         note = decoder.decodeObjectForKey(kGeotificationNoteKey) as! String
         eventType = EventType(rawValue: decoder.decodeIntegerForKey(kGeotificationEventTypeKey))!
+        recipients = decoder.decodeObjectForKey(kGeotificationRecipientsKey) as! [Contact]
     }
     
     func encodeWithCoder(coder: NSCoder) {
@@ -77,6 +81,7 @@ class Geotification: NSObject, NSCoding, MKAnnotation {
         coder.encodeObject(identifier, forKey: kGeotificationIdentifierKey)
         coder.encodeObject(note, forKey: kGeotificationNoteKey)
         coder.encodeInt(Int32(eventType.rawValue), forKey: kGeotificationEventTypeKey)
+        coder.encodeObject(recipients, forKey: kGeotificationRecipientsKey)
     }
     
 }

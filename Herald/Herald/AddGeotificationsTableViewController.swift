@@ -11,8 +11,7 @@ import MapKit
 import CoreLocation
 
 protocol AddGeotificationsViewControllerDelegate {
-    func addGeotificationViewController(controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D,
-        radius: Double, identifier: String, note: String, eventType: EventType)
+    func addGeotificationViewController(controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: EventType, recipients: [Contact])
 }
 
 class AddGeotificationViewController: UITableViewController, UITextFieldDelegate, CLLocationManagerDelegate {
@@ -28,6 +27,7 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     @IBOutlet weak var mapView: MKMapView!
     
     var myMessage : String?
+    var geotificationRecipients = [Contact]()
     
     var delegate: AddGeotificationsViewControllerDelegate!
     
@@ -67,10 +67,11 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         let identifier = NSUUID().UUIDString
         let note = noteTextField.text
         let eventType = (eventTypeSegmentedControl.selectedSegmentIndex == 0) ? EventType.OnEntry : EventType.OnExit
+        let recipients = geotificationRecipients
         
         Utilities.invokeAlertMethod("Compose Message", strBody: "Message is scheduled for _________", delegate: self)
         
-        delegate!.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: eventType)
+        delegate!.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: eventType, recipients: recipients)
         
         self.resetInterface()
     }
