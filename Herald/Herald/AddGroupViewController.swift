@@ -22,6 +22,7 @@ class AddGroupViewController: UIViewController, UITextFieldDelegate {
         let group = Group(name: groupNameTextField.text!, members: [])
         groups?.addGroup(group)
         dismissViewControllerAnimated(true, completion: nil)
+        saveGroups()
     }
     
     
@@ -42,6 +43,11 @@ class AddGroupViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //dismisses keyboard on return key press
         self.view.endEditing(true)
         return false
+    }
+    
+    
+    func saveGroups() {
+        NSKeyedArchiver.archiveRootObject(groups!, toFile: GroupList.archiveURL.path!)
     }
 
     /*
