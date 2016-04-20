@@ -10,9 +10,22 @@ import UIKit
 import Contacts
 import ContactsUI
 
+
+protocol AddedContactsDelegate {
+    func groupModifiedAddedContacts(controller: GroupDetailTableViewController, didAddGroup group: Group)
+}
+
+protocol RemovedContactsDelegate {
+    func groupModifiedRemovedContacts(controller: GroupDetailTableViewController, didRemoveGroup group: Group)
+}
+
+
 class GroupDetailTableViewController: UITableViewController, CNContactPickerDelegate {
 
     var group: Group?
+    var addedContactsDelegate: AddedContactsDelegate?
+    var removedContactsDelegate: RemovedContactsDelegate?
+    
     
     @IBAction func addMember(sender: AnyObject) {
         let controller = CNContactPickerViewController()
@@ -21,6 +34,7 @@ class GroupDetailTableViewController: UITableViewController, CNContactPickerDele
         controller.predicateForEnablingContact = NSPredicate(format: "phoneNumbers.@count > 0", argumentArray: nil)
         navigationController?.presentViewController(controller, animated: true, completion: nil)
     }
+    
     
     func contactPicker(picker: CNContactPickerViewController, didSelectContacts contacts: [CNContact]) {
         
@@ -33,10 +47,13 @@ class GroupDetailTableViewController: UITableViewController, CNContactPickerDele
                 group?.members.append(newContact)
             }
         }
+        
+        addedContactsDelegate!.groupModifiedAddedContacts(self, didAddGroup: group!)
     }
     
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         if let table = self.view as? UITableView {
             table.reloadData()
         }
@@ -98,6 +115,8 @@ class GroupDetailTableViewController: UITableViewController, CNContactPickerDele
             group?.members.removeAtIndex(indexPath.row)  // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             tableView.endUpdates()
+            
+            removedContactsDelegate!.groupModifiedRemovedContacts(self, didRemoveGroup: group!)
             
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
