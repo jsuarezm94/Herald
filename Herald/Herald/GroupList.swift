@@ -55,4 +55,9 @@ class GroupList: NSObject, NSCoding {
     }
     
     
+    //MARK: Archiving paths
+    static let documentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+    static let archiveURL = documentsDirectory.URLByAppendingPathComponent("groups")
+    
+    
 }
