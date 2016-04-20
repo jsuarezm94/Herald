@@ -29,7 +29,7 @@ class GroupDetailTableViewController: UITableViewController, CNContactPickerDele
         for contact in contacts {
             if let stuff = contact.phoneNumbers[0].value as? CNPhoneNumber {
                 let number = stuff.valueForKey("digits") as! String
-                let newContact = Contact(name: formatter.stringFromContact(contact)!, number: number)
+                let newContact = Contact(contactName: formatter.stringFromContact(contact)!, number: number)
                 group?.members.append(newContact)
             }
         }
@@ -75,7 +75,7 @@ class GroupDetailTableViewController: UITableViewController, CNContactPickerDele
         let cell = tableView.dequeueReusableCellWithIdentifier("groupMemberCell", forIndexPath: indexPath)
         
         
-        cell.textLabel!.text = group?.members[indexPath.row].name
+        cell.textLabel!.text = group?.members[indexPath.row].contactName
         cell.detailTextLabel!.text = group?.members[indexPath.row].number
         
         return cell

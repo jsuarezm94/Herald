@@ -8,7 +8,10 @@
 
 import Foundation
 
-class Group {
+let nameKey = "name"
+let memberKey = "member"
+
+class Group: NSObject, NSCoding {
     
     var name: String
     var members : [Contact]
@@ -16,5 +19,23 @@ class Group {
     init(name: String, members: [Contact]) {
         self.name = name
         self.members = members
+    }
+    
+    
+    
+    //MARK: NSCoding
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(name, forKey: nameKey)
+        aCoder.encodeObject(members, forKey: memberKey)
+    }
+    
+    required convenience init(coder aDecoder: NSCoder) {
+        
+        let name = aDecoder.decodeObjectForKey(nameKey) as! String
+        var members = [Contact]()
+        if let groupMembers = aDecoder.decodeObjectForKey(memberKey) as? [Contact] {
+            members = groupMembers
+        }
+        self.init(name: name, members: members)
     }
 }
