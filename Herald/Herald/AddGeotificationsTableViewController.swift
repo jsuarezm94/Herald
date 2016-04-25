@@ -132,7 +132,8 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -140,8 +141,13 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         if let templatesVc = segue.destinationViewController as? MessageTemplatesTableViewController {
             templatesVc.flag = 1
         }
+        
+        if let destVC = segue.destinationViewController as? RecipientListTableViewController {
+            destVC.recipients = geotificationRecipients
+        }
 
     }
+    
     
     @IBAction func unwindWithSelectedMessage(segue:UIStoryboardSegue) {
         if let messageTemplatesTableViewController = segue.sourceViewController as? MessageTemplatesTableViewController {
