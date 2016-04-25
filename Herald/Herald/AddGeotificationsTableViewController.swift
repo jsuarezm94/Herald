@@ -52,7 +52,6 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         //allows dismissal of keyboard on return key press
         self.radiusTextField.delegate = self
         self.noteTextField.delegate = self
-        self.contactTextField.delegate = self
     }
     
     
