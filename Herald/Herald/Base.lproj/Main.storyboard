@@ -426,6 +426,7 @@
                         <outlet property="eventTypeSegmentedControl" destination="vIh-B5-Ume" id="YX8-gC-71Z"/>
                         <outlet property="mapView" destination="3L3-fj-gHa" id="V7w-Uk-l7h"/>
                         <outlet property="noteTextField" destination="a3Z-Uh-s6Q" id="sUD-e1-xJ7"/>
+                        <outlet property="numberOfRecipientsLabel" destination="K5c-aV-PRI" id="xBf-gr-sCu"/>
                         <outlet property="radiusTextField" destination="e7A-L8-YIw" id="ie4-bu-cdu"/>
                         <outlet property="zoomButton" destination="h8e-o0-JuV" id="XYj-5d-Z3K"/>
                     </connections>

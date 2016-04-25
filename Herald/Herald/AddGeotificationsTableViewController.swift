@@ -24,8 +24,8 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     @IBOutlet weak var eventTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var radiusTextField: UITextField!
     @IBOutlet weak var noteTextField: UITextField!
-    @IBOutlet weak var contactTextField: UITextField!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var numberOfRecipientsLabel: UILabel!
     
     var myMessage : String?
     var geotificationRecipients = [Contact]()
@@ -74,7 +74,15 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
                 contactNames = contactNames + newContact.contactName + ""
             }
         }
-        contactTextField.text = contactNames
+        
+        if (geotificationRecipients.count == 0) {
+            numberOfRecipientsLabel.text = "0 Recipients Selected"
+        } else if (geotificationRecipients.count == 1) {
+            numberOfRecipientsLabel.text = "1 Recipient Selected"
+        } else if (geotificationRecipients.count > 1) {
+            numberOfRecipientsLabel.text = "\(geotificationRecipients.count) Recipients Selected"
+        }
+        
     }
     
     
