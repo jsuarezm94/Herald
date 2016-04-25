@@ -61,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func handleRegionEvent(region: CLRegion!) {
         // Show an alert if application is active
+        /*
         if UIApplication.sharedApplication().applicationState == .Active {
             if let message : [String] = notefromRegionIdentifier(region.identifier) {
                 if let viewController = window?.rootViewController {
@@ -69,6 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 }
             }
         } else {
+        */
             // Otherwise present a local notification
             if let geotificationInfo : [String] = notefromRegionIdentifier(region.identifier) {
                 let notification = UILocalNotification()
@@ -80,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 UIApplication.sharedApplication().presentLocalNotificationNow(notification)
 
             }
-        }
+        //}
     }
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
@@ -108,6 +110,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // Do something serious in a real app.
         print("Received Local Notification:")
         print(notification.alertBody)
+        
+        let geotificationInfo = notefromRegionIdentifier(geotificationRegion!.identifier)
+        let newNotification = NSNotification(name: "sendMessageNotification", object: geotificationInfo![0])
+        NSNotificationCenter.defaultCenter().postNotification(newNotification)
+        
     }
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {

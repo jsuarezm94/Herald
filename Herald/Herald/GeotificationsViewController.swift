@@ -94,7 +94,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
 
         let categoriesForSettings = NSSet(objects: messageCategory)
 
-        // Register the notification settings.
+        // Register the notification settings
         let newNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: categoriesForSettings as? Set<UIUserNotificationCategory>)
         UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
     }
@@ -105,8 +105,11 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
         if(MFMessageComposeViewController.canSendText())
         {
             controller.body = notification.note
-            
-            let sendTo : [String]? = ["7088376127"]
+        
+            var sendTo = [String]();
+            for contact in notification.recipients {
+                sendTo.append(contact.number)
+            }
             
             controller.recipients = sendTo
             
@@ -178,6 +181,10 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
     // MARK: Loading and saving functions
     
     func loadAllGeotifications() {
+        //Remove all annotations
+        let annotations = mapView.annotations
+        mapView.removeAnnotations(annotations)
+        
         geotifications = []
         
         if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
@@ -275,6 +282,7 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
 
         // Delete geotification
         let geotification = view.annotation as! Geotification
+        self.mapView.removeAnnotation(view.annotation!)
         stopMonitoringGeotification(geotification)   // Add this statement
         removeGeotification(geotification)
         saveAllGeotifications()

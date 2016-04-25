@@ -8,8 +8,13 @@
 
 import UIKit
 import MapKit
+import MessageUI
 
-class Utilities : NSObject {
+class Utilities : NSObject, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate {
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
+        
+    }
     
     class func invokeAlertMethod(strTitle: String, strBody: String, delegate: AnyObject?) {
         let alert: UIAlertView = UIAlertView()
@@ -25,6 +30,12 @@ class Utilities : NSObject {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let action = UIAlertAction(title: "Dismiss reminder", style: .Default, handler: {
             (alert: UIAlertAction!) in print("IN SEND HANDLER")
+            //let sendAction = UIAlertAction(title: "blah", style: .Cancel, handler: { (alert: UIAlertAction) in
+//            let compose = RTF_BLACKHOLE
+//            alert.presentingViewController.dismissViewController(true)
+            
+            
+        //})
             /* THIS IS WHERE I HAVE TO CALL iMESSAGE FUNCTION */
             
             /* HOW TO GET THE RIGHT GEOTIFICATION TO PREPOPULATE THE FIELDS? */

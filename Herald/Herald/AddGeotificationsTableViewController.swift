@@ -8,14 +8,14 @@
 
 import UIKit
 import MapKit
-import CoreLocation
+//import CoreLocation
 import ContactsUI
 
 protocol AddGeotificationsViewControllerDelegate {
     func addGeotificationViewController(controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: EventType, recipients: [Contact])
 }
 
-class AddGeotificationViewController: UITableViewController, UITextFieldDelegate, CLLocationManagerDelegate, CNContactPickerDelegate {
+class AddGeotificationViewController: UITableViewController, UITextFieldDelegate, CNContactPickerDelegate {//CLLocationManagerDelegate, CNContactPickerDelegate {
     
     
     @IBOutlet var addButton: UIBarButtonItem!
@@ -33,13 +33,14 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     
     var delegate: AddGeotificationsViewControllerDelegate!
     
-    let locationManager = CLLocationManager()
+    //let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
+        //locationManager.delegate = self
+        //locationManager.requestAlwaysAuthorization()
+        mapView.showsUserLocation = true
         
         navigationItem.rightBarButtonItems = [addButton, zoomButton]
         addButton.enabled = false
@@ -78,11 +79,12 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     }
     
     
-    
+    /*
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        print("HERE")
         mapView.showsUserLocation = (status == .AuthorizedAlways)
     }
-    
+    */
     @IBAction func textFieldEditingChanged(sender: UITextField) {
         addButton.enabled = !radiusTextField.text!.isEmpty && !noteTextField.text!.isEmpty
     }
@@ -105,9 +107,12 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     
     func resetInterface() {
         eventTypeSegmentedControl.selectedSegmentIndex = 0
-        //let span = MKCoordinateSpanMake(0.075, 0.075)
-        mapView.centerCoordinate = CLLocationCoordinate2D(latitude: 37.13283999999998, longitude: -95.785579999999996)
-        //ZOOM
+//        let center = CLLocationCoordinate2D(latitude: 37.13283999999998, longitude: -95.785579999999996)
+//        mapView.region = MKCoordinateRegionMakeWithDistance(center, 3500000.0, 3500000.0)
+        if let coordinate = mapView.userLocation.location?.coordinate {
+            let region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000)
+            mapView.setRegion(region, animated: true)
+        }
         noteTextField.text! = ""
         radiusTextField.text! = "100"
         addButton.enabled = false

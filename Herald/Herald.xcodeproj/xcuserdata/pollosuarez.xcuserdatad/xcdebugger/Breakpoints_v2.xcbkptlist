@@ -68,12 +68,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/AddGeotificationsTableViewController.swift"
-            timestampString = "482778946.182459"
+            timestampString = "483055845.621783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "prepareForSegue(_:sender:)"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "onAdd(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -84,12 +84,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/AddGeotificationsTableViewController.swift"
-            timestampString = "482778946.182459"
+            timestampString = "483055845.621783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "prepareForSegue(_:sender:)"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "onAdd(_:)"
             landmarkType = "5">
             <Locations>
                <Location
@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/Utilities.swift"
-            timestampString = "482783991.554015"
+            timestampString = "483244627.504957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "showSimpleAlertWithTitle(_:message:viewController:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -164,12 +164,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/AddGeotificationsTableViewController.swift"
-            timestampString = "482385312.22883"
+            timestampString = "483055845.621783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "textFieldEditingChanged(_:)"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "contactsButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -180,12 +180,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/AddGeotificationsTableViewController.swift"
-            timestampString = "482385312.22883"
+            timestampString = "483055845.621783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "textFieldEditingChanged(_:)"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "contactsButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/AppDelegate.swift"
-            timestampString = "482784127.889826"
+            timestampString = "483053022.511743"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "AppDelegate"
             landmarkType = "3">
          </BreakpointContent>
@@ -212,11 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/GeotificationsViewController.swift"
-            timestampString = "482783531.583097"
+            timestampString = "483245887.548831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "removeGeotification(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -228,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/GeotificationsViewController.swift"
-            timestampString = "482783531.583097"
+            timestampString = "483245887.548831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "loadAllGeotifications()"
             landmarkType = "5">
          </BreakpointContent>
@@ -244,12 +244,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/AddGeotificationsTableViewController.swift"
-            timestampString = "482778946.182459"
+            timestampString = "483055845.621783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "onZoomToCurrentLocation(_:)"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "onAdd(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -260,11 +260,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/AddGeotificationsTableViewController.swift"
-            timestampString = "482778946.182459"
+            timestampString = "483055845.621783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "textFieldEditingChanged(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Herald/AddGeotificationsTableViewController.swift"
+            timestampString = "483055845.621783"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "AddGeotificationViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -275,28 +291,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Herald/AddGeotificationsTableViewController.swift"
-            timestampString = "482778946.182459"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "onZoomToCurrentLocation(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Herald/GeotificationsViewController.swift"
-            timestampString = "482783531.583097"
+            timestampString = "483245887.548831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "removeGeotification(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -308,11 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/GeotificationsViewController.swift"
-            timestampString = "482783531.583097"
+            timestampString = "483245887.548831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "removeGeotification(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -324,11 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/AppDelegate.swift"
-            timestampString = "482784127.889826"
+            timestampString = "483245018.078435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "notefromRegionIdentifier(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -340,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/AppDelegate.swift"
-            timestampString = "482784127.889826"
+            timestampString = "483245018.078435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "notefromRegionIdentifier(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -356,11 +356,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/AppDelegate.swift"
-            timestampString = "482784127.889826"
+            timestampString = "483053022.511743"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "handleRegionEvent(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -372,12 +372,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/AddGeotificationsTableViewController.swift"
-            timestampString = "482779476.335467"
+            timestampString = "483055845.621783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "onAdd(_:)"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "contactPicker(_:didSelectContacts:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -388,12 +388,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/AddGeotificationsTableViewController.swift"
-            timestampString = "482779479.755862"
+            timestampString = "483055845.621783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "onAdd(_:)"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "contactPicker(_:didSelectContacts:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -404,11 +404,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/GeotificationsViewController.swift"
-            timestampString = "482782784.886915"
+            timestampString = "483245887.548831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "mapView(_:annotationView:calloutAccessoryControlTapped:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -420,11 +420,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/AppDelegate.swift"
-            timestampString = "482784127.889826"
+            timestampString = "483245018.078435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "application(_:handleActionWithIdentifier:forLocalNotification:completionHandler:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -436,12 +436,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/GeotificationsViewController.swift"
-            timestampString = "482782784.886915"
+            timestampString = "483245887.548831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
             landmarkName = "mapView(_:annotationView:calloutAccessoryControlTapped:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Herald/GeotificationsViewController.swift"
+            timestampString = "483245887.548831"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "removeGeotification(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -452,12 +468,188 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Herald/GeotificationsViewController.swift"
-            timestampString = "482783531.583097"
+            timestampString = "483054457.508981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
-            landmarkName = "removeGeotification(_:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Herald/GeotificationsViewController.swift"
+            timestampString = "483245887.548831"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
+            landmarkName = "locationManager(_:didChangeAuthorizationStatus:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Herald/AddGeotificationsTableViewController.swift"
+            timestampString = "483054550.391699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Herald/AddGeotificationsTableViewController.swift"
+            timestampString = "483055845.621783"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "AddGeotificationViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Herald/AddGeotificationsTableViewController.swift"
+            timestampString = "483055845.621783"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "AddGeotificationViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Herald/AddGeotificationsTableViewController.swift"
+            timestampString = "483055919.938705"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "onZoomToCurrentLocation(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Herald/Utilities.swift"
+            timestampString = "483244627.504957"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "zoomToUserLocationInMapView(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Herald/Utilities.swift"
+            timestampString = "483244627.504957"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "zoomToUserLocationInMapView(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Herald.Utilities.zoomToUserLocationInMapView (__ObjC.MKMapView) -&gt; ()"
+                  moduleName = "Herald"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pollosuarez/Mobile_Applications/FinalProject/Herald/Herald/Herald/Utilities.swift"
+                  timestampString = "483245128.67787"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Herald.Utilities.zoomToUserLocationInMapView (__ObjC.MKMapView) -&gt; ()"
+                  moduleName = "Herald"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pollosuarez/Mobile_Applications/FinalProject/Herald/Herald/Herald/Utilities.swift"
+                  timestampString = "483245128.677991"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "309">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Herald/AppDelegate.swift"
+            timestampString = "483245082.707705"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "application(_:didReceiveLocalNotification:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Herald/GeotificationsViewController.swift"
+            timestampString = "483245887.548831"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
+            landmarkName = "mapView(_:annotationView:calloutAccessoryControlTapped:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
