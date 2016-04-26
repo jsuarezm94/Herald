@@ -109,7 +109,8 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         let eventType = (eventTypeSegmentedControl.selectedSegmentIndex == 0) ? EventType.OnEntry : EventType.OnExit
         let recipients = geotificationRecipients
         
-        Utilities.invokeAlertMethod("Compose Message", strBody: "Message is scheduled for _________", delegate: self)
+        //Utilities.invokeAlertMethod("Compose Message", strBody: "Message has been successfully scheduled!", delegate: self)
+        Utilities.invokeAlertMethod("Compose Message", strBody: "Message has been successfully scheduled for \(recipients.count) contacts", delegate: self)
         
         delegate!.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: eventType, recipients: recipients)
         
