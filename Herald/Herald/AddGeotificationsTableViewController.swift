@@ -140,6 +140,8 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         noteTextField.text! = ""
         radiusTextField.text! = "100"
         addButton.enabled = false
+        geotificationRecipients = []
+        numberOfRecipientsLabel.text = "0 Recipients Selected"
 
     }
     
