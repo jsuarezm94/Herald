@@ -54,14 +54,10 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
             }
         }
 
-        /* MUST DELETE THE GEOTIFICAITON ONCE THE USER HANDLES THE NOTIFICATION */
     }
     
     func handleCancelMessageNotification() {
         print("cancel message button")
-        
-        /* MUST DELETE THE GEOTIFICAITON ONCE THE USER HANDLES THE NOTIFICATION */
-
     }
     
     func setupNotificationSettings() {
@@ -162,9 +158,6 @@ class GeotificationsViewController: UIViewController, AddGeotificationsViewContr
                     if geotification.identifier == identifier {
                         flag=count;
                         geoToRemove = geotification
-                        //print(geoToRemove!.note)
-                        //stopMonitoringGeotification(geoToRemove!)
-                        //geotifications.removeAtIndex(count)
                     }
                     count += 1;
                 }

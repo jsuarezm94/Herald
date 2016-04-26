@@ -33,13 +33,9 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     
     var delegate: AddGeotificationsViewControllerDelegate!
     
-    //let locationManager = CLLocationManager()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //locationManager.delegate = self
-        //locationManager.requestAlwaysAuthorization()
         mapView.showsUserLocation = true
         
         navigationItem.rightBarButtonItems = [addButton, zoomButton]
@@ -66,8 +62,6 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
             numberOfRecipientsLabel.text = "\(geotificationRecipients.count) Recipients Selected"
         }
     }
-    
-    
     
     @IBAction func contactsButton(sender: AnyObject) {
         let controller = CNContactPickerViewController()
@@ -103,12 +97,6 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         geotificationRecipients.removeAtIndex(position)
     }
     
-    /*
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        print("HERE")
-        mapView.showsUserLocation = (status == .AuthorizedAlways)
-    }
-    */
     @IBAction func textFieldEditingChanged(sender: UITextField) {
         addButton.enabled = !radiusTextField.text!.isEmpty && !noteTextField.text!.isEmpty
     }
@@ -131,12 +119,7 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     
     func resetInterface() {
         eventTypeSegmentedControl.selectedSegmentIndex = 0
-//        let center = CLLocationCoordinate2D(latitude: 37.13283999999998, longitude: -95.785579999999996)
-//        mapView.region = MKCoordinateRegionMakeWithDistance(center, 3500000.0, 3500000.0)
-        if let coordinate = mapView.userLocation.location?.coordinate {
-            let region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000)
-            mapView.setRegion(region, animated: true)
-        }
+        Utilities.zoomToUserLocationInMapView(mapView)
         noteTextField.text! = ""
         radiusTextField.text! = "100"
         addButton.enabled = false
