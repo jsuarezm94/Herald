@@ -15,7 +15,7 @@ protocol AddGeotificationsViewControllerDelegate {
     func addGeotificationViewController(controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: EventType, recipients: [Contact])
 }
 
-class AddGeotificationViewController: UITableViewController, UITextFieldDelegate, CNContactPickerDelegate {//CLLocationManagerDelegate, CNContactPickerDelegate {
+class AddGeotificationViewController: UITableViewController, UITextFieldDelegate, CNContactPickerDelegate, DeletedRecipientDelegate {//CLLocationManagerDelegate, CNContactPickerDelegate {
     
     
     @IBOutlet var addButton: UIBarButtonItem!
@@ -55,6 +55,20 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     }
     
     
+    override func viewDidAppear(animated: Bool) {
+        
+        //repeating this code here to update recipient count when the user deletes recipients
+        if (geotificationRecipients.count == 0) {
+            numberOfRecipientsLabel.text = "0 Recipients Selected"
+        } else if (geotificationRecipients.count == 1) {
+            numberOfRecipientsLabel.text = "1 Recipient Selected"
+        } else if (geotificationRecipients.count > 1) {
+            numberOfRecipientsLabel.text = "\(geotificationRecipients.count) Recipients Selected"
+        }
+    }
+    
+    
+    
     @IBAction func contactsButton(sender: AnyObject) {
         let controller = CNContactPickerViewController()
         controller.delegate = self
@@ -85,6 +99,9 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         
     }
     
+    func indexPathForDeletedRecipient(controller: RecipientListTableViewController, didDeleteRecipient position: Int) {
+        geotificationRecipients.removeAtIndex(position)
+    }
     
     /*
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -144,6 +161,7 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         
         if let destVC = segue.destinationViewController as? RecipientListTableViewController {
             destVC.recipients = geotificationRecipients
+            destVC.deletedRecipientDelegate = self
         }
 
     }
