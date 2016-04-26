@@ -342,6 +342,9 @@
                                                             <exclude reference="FhZ-ej-NvA"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <segue destination="XDM-No-wi0" kind="presentation" id="fMm-to-xJz"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffq-vL-fdC">
                                                     <rect key="frame" x="354" y="37" width="223" height="30"/>
@@ -678,6 +681,40 @@
             </objects>
             <point key="canvasLocation" x="281" y="1282"/>
         </scene>
+        <!--Select Group-->
+        <scene sceneID="Nkh-j4-f2W">
+            <objects>
+                <tableViewController title="Select Group" id="Fge-t0-zOI" customClass="GroupSelectionTableViewController" customModule="Herald" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="A60-Sf-hQY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupSelectionCell" id="0bh-zy-DaR">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0bh-zy-DaR" id="N5Q-bO-WvI">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="kG6-Xh-zHX" kind="unwind" identifier="unwindToAddGeotification" unwindAction="unwindWithSelectedMessage:" id="v7w-KX-Nic"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Fge-t0-zOI" id="Fzj-wf-4bL"/>
+                            <outlet property="delegate" destination="Fge-t0-zOI" id="UTf-XK-8eU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Select Group" id="U2D-3a-I4y"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tDN-Pc-ycG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kG6-Xh-zHX" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2696" y="-173"/>
+        </scene>
         <!--Recipient List Table View Controller-->
         <scene sceneID="Nhx-4x-orc">
             <objects>
@@ -868,6 +905,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ye5-kZ-sL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-503" y="1282"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xsF-tL-o2c">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XDM-No-wi0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5EO-Uk-1RK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fge-t0-zOI" kind="relationship" relationship="rootViewController" id="rIf-jw-MrY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mwU-9N-i5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="-173"/>
         </scene>
     </scenes>
     <resources>

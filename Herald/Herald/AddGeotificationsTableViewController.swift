@@ -172,6 +172,13 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
             noteTextField.text = messageTemplatesTableViewController.selectedMessage
             addButton.enabled = true
         }
+        
+        if let groupSelectionTableViewController = segue.sourceViewController as? GroupSelectionTableViewController {
+            let selectedGroup = groupSelectionTableViewController.selectedGroup
+            for contact in selectedGroup!.members {
+                geotificationRecipients.append(contact)
+            }
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //allows dismissal of keyboard on return key press

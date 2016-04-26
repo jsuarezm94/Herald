@@ -28,6 +28,7 @@
 		53D7C50B1CB7203C00360A09 /* OutboxMessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C50A1CB7203C00360A09 /* OutboxMessagesTableViewCell.swift */; };
 		53D7C50D1CB721DE00360A09 /* OutboxMessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C50C1CB721DE00360A09 /* OutboxMessagesTableViewController.swift */; };
 		68D2F87E1CCEE45000FC3B63 /* RecipientListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D2F87D1CCEE45000FC3B63 /* RecipientListTableViewController.swift */; };
+		68D2F8801CCEF05F00FC3B63 /* GroupSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D2F87F1CCEF05F00FC3B63 /* GroupSelectionTableViewController.swift */; };
 		68DC81A21CBD9FD8004A78EC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A11CBD9FD8004A78EC /* Group.swift */; };
 		68DC81A41CBDA043004A78EC /* GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A31CBDA043004A78EC /* GroupList.swift */; };
 		68DC81A61CBDA1B8004A78EC /* GroupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A51CBDA1B8004A78EC /* GroupListTableViewController.swift */; };
@@ -61,6 +62,7 @@
 		53D7C50A1CB7203C00360A09 /* OutboxMessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboxMessagesTableViewCell.swift; sourceTree = "<group>"; };
 		53D7C50C1CB721DE00360A09 /* OutboxMessagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboxMessagesTableViewController.swift; sourceTree = "<group>"; };
 		68D2F87D1CCEE45000FC3B63 /* RecipientListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientListTableViewController.swift; sourceTree = "<group>"; };
+		68D2F87F1CCEF05F00FC3B63 /* GroupSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSelectionTableViewController.swift; sourceTree = "<group>"; };
 		68DC81A11CBD9FD8004A78EC /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		68DC81A31CBDA043004A78EC /* GroupList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupList.swift; sourceTree = "<group>"; };
 		68DC81A51CBDA1B8004A78EC /* GroupListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListTableViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				537381681CAE10C50004B596 /* MessageViewController.swift */,
 				537381801CAE1DD00004B596 /* AddGeotificationsTableViewController.swift */,
 				68D2F87D1CCEE45000FC3B63 /* RecipientListTableViewController.swift */,
+				68D2F87F1CCEF05F00FC3B63 /* GroupSelectionTableViewController.swift */,
 			);
 			name = "Compose Message";
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				537381691CAE10C50004B596 /* MessageViewController.swift in Sources */,
 				5318B4351CB1B5A50099CE55 /* Message.swift in Sources */,
 				68D2F87E1CCEE45000FC3B63 /* RecipientListTableViewController.swift in Sources */,
+				68D2F8801CCEF05F00FC3B63 /* GroupSelectionTableViewController.swift in Sources */,
 				537381351CA5AF710004B596 /* AppDelegate.swift in Sources */,
 				53D7C50D1CB721DE00360A09 /* OutboxMessagesTableViewController.swift in Sources */,
 				5373817D1CAE1D060004B596 /* Geotifications.swift in Sources */,
