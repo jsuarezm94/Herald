@@ -27,6 +27,7 @@
 		53D7C5091CB6E8D900360A09 /* AddMessageTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C5081CB6E8D900360A09 /* AddMessageTemplateViewController.swift */; };
 		53D7C50B1CB7203C00360A09 /* OutboxMessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C50A1CB7203C00360A09 /* OutboxMessagesTableViewCell.swift */; };
 		53D7C50D1CB721DE00360A09 /* OutboxMessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7C50C1CB721DE00360A09 /* OutboxMessagesTableViewController.swift */; };
+		689FC9D21CD023D200A212A5 /* TemplateSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689FC9D11CD023D200A212A5 /* TemplateSelectionTableViewController.swift */; };
 		68D2F87E1CCEE45000FC3B63 /* RecipientListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D2F87D1CCEE45000FC3B63 /* RecipientListTableViewController.swift */; };
 		68D2F8801CCEF05F00FC3B63 /* GroupSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D2F87F1CCEF05F00FC3B63 /* GroupSelectionTableViewController.swift */; };
 		68DC81A21CBD9FD8004A78EC /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DC81A11CBD9FD8004A78EC /* Group.swift */; };
@@ -61,6 +62,7 @@
 		53D7C5081CB6E8D900360A09 /* AddMessageTemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMessageTemplateViewController.swift; sourceTree = "<group>"; };
 		53D7C50A1CB7203C00360A09 /* OutboxMessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboxMessagesTableViewCell.swift; sourceTree = "<group>"; };
 		53D7C50C1CB721DE00360A09 /* OutboxMessagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutboxMessagesTableViewController.swift; sourceTree = "<group>"; };
+		689FC9D11CD023D200A212A5 /* TemplateSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateSelectionTableViewController.swift; sourceTree = "<group>"; };
 		68D2F87D1CCEE45000FC3B63 /* RecipientListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientListTableViewController.swift; sourceTree = "<group>"; };
 		68D2F87F1CCEF05F00FC3B63 /* GroupSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSelectionTableViewController.swift; sourceTree = "<group>"; };
 		68DC81A11CBD9FD8004A78EC /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				537381801CAE1DD00004B596 /* AddGeotificationsTableViewController.swift */,
 				68D2F87D1CCEE45000FC3B63 /* RecipientListTableViewController.swift */,
 				68D2F87F1CCEF05F00FC3B63 /* GroupSelectionTableViewController.swift */,
+				689FC9D11CD023D200A212A5 /* TemplateSelectionTableViewController.swift */,
 			);
 			name = "Compose Message";
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				53D7C5091CB6E8D900360A09 /* AddMessageTemplateViewController.swift in Sources */,
 				5373817F1CAE1DB70004B596 /* GeotificationsViewController.swift in Sources */,
 				68DC81A21CBD9FD8004A78EC /* Group.swift in Sources */,
+				689FC9D21CD023D200A212A5 /* TemplateSelectionTableViewController.swift in Sources */,
 				68DC81A61CBDA1B8004A78EC /* GroupListTableViewController.swift in Sources */,
 				5318B4371CB1B6010099CE55 /* Contact.swift in Sources */,
 				53D7C5071CB59DAC00360A09 /* MessageTemplatesTableViewController.swift in Sources */,
