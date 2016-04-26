@@ -14,6 +14,8 @@ class TemplateSelectionTableViewController: UITableViewController {
     var templates = [String]()
     var templatesList = MessageTemplates(templatesArray: [String]())
     
+    var selectedMessage: String?
+    
     let kArray = "messageTemplates"
     
     
@@ -93,6 +95,22 @@ class TemplateSelectionTableViewController: UITableViewController {
         
         return cell
     }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        selectedMessage = templatesList.templatesArray[indexPath.row]
+        dismissVC()
+        performSegueWithIdentifier("unwindToAddGeotificationViewController", sender: self)
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if ( identifier == "unwindToAddGeotificationViewController" ) {
+            return false
+        }
+        return true
+    }
+    
     
 
     /*

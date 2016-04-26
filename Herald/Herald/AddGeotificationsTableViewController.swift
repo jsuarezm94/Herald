@@ -158,11 +158,21 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     
     
     @IBAction func unwindWithSelectedMessage(segue:UIStoryboardSegue) {
-        if let messageTemplatesTableViewController = segue.sourceViewController as? MessageTemplatesTableViewController {
-            noteTextField.text = messageTemplatesTableViewController.selectedMessage
+//        if let messageTemplatesTableViewController = segue.sourceViewController as? MessageTemplatesTableViewController {
+//            noteTextField.text = messageTemplatesTableViewController.selectedMessage
+//            if (geotificationRecipients.count>0 && radiusTextField.text != "") {
+//                addButton.enabled = true
+//            }
+//        }
+        
+        if let templateSelectionTableViewcontroller = segue.sourceViewController as? TemplateSelectionTableViewController {
+            let selectedTemplate = templateSelectionTableViewcontroller.selectedMessage
+            noteTextField.text = selectedTemplate
+            
             if (geotificationRecipients.count>0 && radiusTextField.text != "") {
                 addButton.enabled = true
             }
+            
         }
         
         if let groupSelectionTableViewController = segue.sourceViewController as? GroupSelectionTableViewController {
