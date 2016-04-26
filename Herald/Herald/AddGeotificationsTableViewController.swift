@@ -8,14 +8,13 @@
 
 import UIKit
 import MapKit
-//import CoreLocation
 import ContactsUI
 
 protocol AddGeotificationsViewControllerDelegate {
     func addGeotificationViewController(controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: EventType, recipients: [Contact])
 }
 
-class AddGeotificationViewController: UITableViewController, UITextFieldDelegate, CNContactPickerDelegate, DeletedRecipientDelegate {//CLLocationManagerDelegate, CNContactPickerDelegate {
+class AddGeotificationViewController: UITableViewController, UITextFieldDelegate, CNContactPickerDelegate, DeletedRecipientDelegate {
     
     
     @IBOutlet var addButton: UIBarButtonItem!

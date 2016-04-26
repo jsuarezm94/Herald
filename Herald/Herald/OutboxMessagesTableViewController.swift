@@ -50,6 +50,13 @@ class OutboxMessagesTableViewController: UITableViewController {
 
         // Configure the cell...
         let message = geotificationsList![indexPath.row] as Geotification
+        var contactList = [String]()
+        //Get message contacts
+        for contact in message.recipients {
+            contactList.append(contact.contactName)
+        }
+        let contacts = contactList.joinWithSeparator(", ")
+        cell.contactField?.text = contacts
         cell.messageField?.text = message.note
         cell.radiusField?.text = message.returnRadius
         cell.typeField?.text = message.returnType
