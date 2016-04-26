@@ -23,6 +23,7 @@ class TemplateSelectionTableViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: "dismissVC")
+        self.title = "Select Template"
         
         loadAllMessages()
 

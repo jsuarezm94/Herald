@@ -106,7 +106,6 @@ class MessageTemplatesTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (flag != 1) {
@@ -128,7 +127,7 @@ class MessageTemplatesTableViewController: UITableViewController {
             }
         }
     }
-    */
+
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
