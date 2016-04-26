@@ -19,6 +19,8 @@ class MessageTemplatesTableViewController: UITableViewController {
     var selectedMessage : String?
     var flag : Int?
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +33,8 @@ class MessageTemplatesTableViewController: UITableViewController {
         loadAllMessages()
 
     }
+    
+    
     
     func loadAllMessages() {
         templatesList.templatesArray = []
@@ -60,25 +64,27 @@ class MessageTemplatesTableViewController: UITableViewController {
         }
     }
     
+    
     func loadList(notification: NSNotification){
         //load data here
         self.tableView.reloadData()
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return templatesList.count
     }
 
@@ -92,11 +98,11 @@ class MessageTemplatesTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //selectedMessage = self.templatesList.templatesArray[indexPath.row]
-        
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-    }
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        //selectedMessage = self.templatesList.templatesArray[indexPath.row]
+//        
+//        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+//    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -144,24 +150,17 @@ class MessageTemplatesTableViewController: UITableViewController {
     */
 
     
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
         if let newMessageTemplateViewController = segue.destinationViewController as? AddMessageTemplateViewController {
             newMessageTemplateViewController.templatesList = templatesList
         }
         
-        if segue.identifier == "saveSelectedMessage" {
-            if let cell = sender as? UITableViewCell {
-                let indexPath = tableView.indexPathForCell(cell)
-                if let index = indexPath?.row {
-                    selectedMessage = templatesList.templatesArray[index]
-                }
-            }
-        }
     }
 
     

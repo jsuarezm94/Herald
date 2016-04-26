@@ -483,7 +483,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="templateCell" textLabel="TBr-iP-bhc" style="IBUITableViewCellStyleDefault" id="b5Q-ui-gqn">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="templateCell" textLabel="TBr-iP-bhc" style="IBUITableViewCellStyleDefault" id="b5Q-ui-gqn">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b5Q-ui-gqn" id="faR-rG-Yoh">
@@ -499,9 +499,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Afh-ab-WHR" kind="unwind" identifier="saveSelectedMessage" unwindAction="unwindWithSelectedMessage:" id="QRK-eV-IZc"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -517,7 +514,6 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
-                <exit id="Afh-ab-WHR" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wxi-f7-3Ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1013" y="2308"/>
