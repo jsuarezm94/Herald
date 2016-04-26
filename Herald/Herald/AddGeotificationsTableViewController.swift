@@ -90,6 +90,10 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
             numberOfRecipientsLabel.text = "\(geotificationRecipients.count) Recipients Selected"
         }
         
+        if (geotificationRecipients.count>0 && radiusTextField.text != "" && noteTextField.text != "") {
+            addButton.enabled = true
+        }
+        
     }
     
     func indexPathForDeletedRecipient(controller: RecipientListTableViewController, didDeleteRecipient position: Int) {
@@ -97,7 +101,8 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     }
     
     @IBAction func textFieldEditingChanged(sender: UITextField) {
-        addButton.enabled = !radiusTextField.text!.isEmpty && !noteTextField.text!.isEmpty
+//        addButton.enabled = !radiusTextField.text!.isEmpty && !noteTextField.text!.isEmpty
+        addButton.enabled = !radiusTextField.text!.isEmpty && !noteTextField.text!.isEmpty && geotificationRecipients.count>0
     }
 
     @IBAction private func onAdd(sender: AnyObject) {
@@ -155,13 +160,18 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     @IBAction func unwindWithSelectedMessage(segue:UIStoryboardSegue) {
         if let messageTemplatesTableViewController = segue.sourceViewController as? MessageTemplatesTableViewController {
             noteTextField.text = messageTemplatesTableViewController.selectedMessage
-            addButton.enabled = true
+            if (geotificationRecipients.count>0 && radiusTextField.text != "") {
+                addButton.enabled = true
+            }
         }
         
         if let groupSelectionTableViewController = segue.sourceViewController as? GroupSelectionTableViewController {
             let selectedGroup = groupSelectionTableViewController.selectedGroup
             for contact in selectedGroup!.members {
                 geotificationRecipients.append(contact)
+            }
+            if (noteTextField.text != "" && radiusTextField.text != "") {
+                addButton.enabled = true
             }
         }
     }
