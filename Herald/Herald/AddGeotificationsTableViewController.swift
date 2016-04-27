@@ -47,6 +47,29 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         //allows dismissal of keyboard on return key press
         self.radiusTextField.delegate = self
         self.noteTextField.delegate = self
+        
+        self.addDoneButtonOnKeyboard()
+    }
+    
+    func addDoneButtonOnKeyboard() {
+        
+        let doneToolBar: UIToolbar = UIToolbar(frame: CGRectMake(0,0,320,40))
+        doneToolBar.barStyle = UIBarStyle.Default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let done = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: Selector("doneButtonAction"))
+        
+        var items = [AnyObject]()
+        items.append(flexSpace)
+        items.append(done)
+        doneToolBar.items = items as! [UIBarButtonItem]
+        
+        self.radiusTextField.inputAccessoryView = doneToolBar
+    }
+    
+    
+    func doneButtonAction(){
+        self.radiusTextField.resignFirstResponder()
     }
     
     
@@ -59,6 +82,12 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
             numberOfRecipientsLabel.text = "1 Recipient Selected"
         } else if (geotificationRecipients.count > 1) {
             numberOfRecipientsLabel.text = "\(geotificationRecipients.count) Recipients Selected"
+        }
+        
+        if (geotificationRecipients.count>0 && radiusTextField.text != "" && noteTextField.text != "") {
+            addButton.enabled = true
+        } else {
+            addButton.enabled = false
         }
     }
     
@@ -92,6 +121,8 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         
         if (geotificationRecipients.count>0 && radiusTextField.text != "" && noteTextField.text != "") {
             addButton.enabled = true
+        } else {
+            addButton.enabled = false
         }
         
     }
@@ -165,6 +196,8 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
             
             if (geotificationRecipients.count>0 && radiusTextField.text != "") {
                 addButton.enabled = true
+            } else {
+                addButton.enabled = false
             }
             
         }
@@ -176,6 +209,8 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
             }
             if (noteTextField.text != "" && radiusTextField.text != "") {
                 addButton.enabled = true
+            } else {
+                addButton.enabled = false
             }
         }
     }
