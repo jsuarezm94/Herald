@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,31 +18,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Herald" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbn-02-Y3I">
-                                <rect key="frame" x="234.5" y="271.5" width="132" height="57.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="42"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuxedo" translatesAutoresizingMaskIntoConstraints="NO" id="FI2-fN-LhV">
+                                <rect key="frame" x="150" y="175" width="300" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="5Lv-0g-poQ"/>
+                                    <constraint firstAttribute="width" constant="300" id="6w9-hb-nx6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jose Suarez &amp; Juan Tellez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uz6-o3-MHG">
+                                <rect key="frame" x="220" y="425" width="160" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jose Suarez &amp; Juan Tellez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uz6-o3-MHG">
-                                <rect key="frame" x="220" y="349" width="160" height="19.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Herald" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcS-zr-SQt">
+                                <rect key="frame" x="234" y="142.5" width="132" height="57.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="42"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Qbn-02-Y3I" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="MT5-sw-Plm"/>
-                            <constraint firstItem="Uz6-o3-MHG" firstAttribute="top" secondItem="Qbn-02-Y3I" secondAttribute="bottom" constant="20" id="VQj-dS-a7e"/>
-                            <constraint firstItem="Uz6-o3-MHG" firstAttribute="centerX" secondItem="Qbn-02-Y3I" secondAttribute="centerX" id="ZFD-if-37D"/>
-                            <constraint firstItem="Qbn-02-Y3I" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="z4O-La-Bbh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FI2-fN-LhV" secondAttribute="trailing" constant="160" id="300-Z0-284"/>
+                            <constraint firstItem="FI2-fN-LhV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5Le-iM-bGf"/>
+                            <constraint firstItem="lcS-zr-SQt" firstAttribute="centerX" secondItem="FI2-fN-LhV" secondAttribute="centerX" id="9Cd-A3-hZm"/>
+                            <constraint firstItem="FI2-fN-LhV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="M4Z-2Z-0af"/>
+                            <constraint firstItem="FI2-fN-LhV" firstAttribute="top" secondItem="Uz6-o3-MHG" secondAttribute="bottom" constant="10" id="QC3-3V-XoY"/>
+                            <constraint firstItem="FI2-fN-LhV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="U8X-LO-gNN"/>
+                            <constraint firstItem="FI2-fN-LhV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="160" id="aTg-1B-FPl"/>
+                            <constraint firstItem="FI2-fN-LhV" firstAttribute="top" secondItem="lcS-zr-SQt" secondAttribute="bottom" constant="-25" id="b6l-kC-N2O"/>
+                            <constraint firstItem="FI2-fN-LhV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="lz3-mt-fF6"/>
+                            <constraint firstItem="Uz6-o3-MHG" firstAttribute="centerX" secondItem="FI2-fN-LhV" secondAttribute="centerX" id="qiH-18-56h"/>
+                            <constraint firstItem="Uz6-o3-MHG" firstAttribute="top" secondItem="FI2-fN-LhV" secondAttribute="bottom" id="zbq-s3-aIN"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="300-Z0-284"/>
+                                <exclude reference="5Le-iM-bGf"/>
+                                <exclude reference="QC3-3V-XoY"/>
+                                <exclude reference="aTg-1B-FPl"/>
+                                <exclude reference="lz3-mt-fF6"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="72" y="376"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tuxedo" width="421" height="385"/>
+    </resources>
 </document>

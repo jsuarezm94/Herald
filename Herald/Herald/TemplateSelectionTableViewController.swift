@@ -56,12 +56,12 @@ class TemplateSelectionTableViewController: UITableViewController {
             
         } else {
             
-            let message1 = "Got to the airport"
-            let message2 = "My plane just landed"
-            let message3 = "Leaving home now"
-            let message4 = "Got to the restaurant"
-            let message5 = "Leaving the office"
-            let message6 = "Leaving the party"
+            let message1 = "Got to the airport 💺"
+            let message2 = "My plane just landed 🛬"
+            let message3 = "Leaving home now 🏡"
+            let message4 = "Got to the restaurant 🍴"
+            let message5 = "Leaving the office 🖨"
+            let message6 = "Leaving the party 🎉"
             
             templatesList.addCustomMessage(message1)
             templatesList.addCustomMessage(message2)
