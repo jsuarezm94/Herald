@@ -12,7 +12,7 @@ class AddMessageTemplateViewController: UIViewController {
 
     var templatesList : MessageTemplates?
     
-    @IBOutlet weak var messageText: UITextView!
+    @IBOutlet weak var newMessageTemplateText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class AddMessageTemplateViewController: UIViewController {
     }
     
     @IBAction func saveMessage(sender: UIBarButtonItem) {
-        let newMessage = messageText.text!
+        let newMessage = newMessageTemplateText.text!
         templatesList?.addCustomMessage(newMessage)
         
         NSUserDefaults.standardUserDefaults().setObject(templatesList?.templatesArray, forKey: "messageTemplates")

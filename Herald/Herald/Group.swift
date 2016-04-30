@@ -21,8 +21,6 @@ class Group: NSObject, NSCoding {
         self.members = members
     }
     
-    
-    
     //MARK: NSCoding
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: nameKey)

@@ -51,8 +51,8 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         self.addDoneButtonOnKeyboard()
     }
     
+    // Add the done button to dismiss the numberpad keyboard
     func addDoneButtonOnKeyboard() {
-        
         let doneToolBar: UIToolbar = UIToolbar(frame: CGRectMake(0,0,320,40))
         doneToolBar.barStyle = UIBarStyle.Default
         
@@ -132,7 +132,6 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     }
     
     @IBAction func textFieldEditingChanged(sender: UITextField) {
-//        addButton.enabled = !radiusTextField.text!.isEmpty && !noteTextField.text!.isEmpty
         addButton.enabled = !radiusTextField.text!.isEmpty && !noteTextField.text!.isEmpty && geotificationRecipients.count>0
     }
 
@@ -145,7 +144,6 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         let eventType = (eventTypeSegmentedControl.selectedSegmentIndex == 0) ? EventType.OnEntry : EventType.OnExit
         let recipients = geotificationRecipients
         
-        //Utilities.invokeAlertMethod("Compose Message", strBody: "Message has been successfully scheduled!", delegate: self)
         Utilities.invokeAlertMethod("Compose Message", strBody: "Message has been successfully scheduled for \(recipients.count) contacts", delegate: self)
         
         delegate!.addGeotificationViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note!, eventType: eventType, recipients: recipients)
@@ -169,9 +167,6 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
     }
     
     // MARK: - Navigation
-    
-    
-
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -184,9 +179,7 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
             destVC.recipients = geotificationRecipients
             destVC.deletedRecipientDelegate = self
         }
-
     }
-    
     
     @IBAction func unwindWithSelectedMessage(segue:UIStoryboardSegue) {
         

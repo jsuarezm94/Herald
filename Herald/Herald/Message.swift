@@ -11,11 +11,9 @@ import Foundation
 class Message {
     
     var messageText : String
-    //var messageContact : Contact
     
     init(messageText: String) {
         self.messageText = messageText
-        //self.messageContact = messageContact
     }
     
 }

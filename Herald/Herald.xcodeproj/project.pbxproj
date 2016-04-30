@@ -15,7 +15,6 @@
 		5373813A1CA5AF710004B596 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537381381CA5AF710004B596 /* Main.storyboard */; };
 		5373813C1CA5AF710004B596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5373813B1CA5AF710004B596 /* Assets.xcassets */; };
 		5373813F1CA5AF710004B596 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5373813D1CA5AF710004B596 /* LaunchScreen.storyboard */; };
-		537381691CAE10C50004B596 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537381681CAE10C50004B596 /* MessageViewController.swift */; };
 		5373816B1CAE126D0004B596 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5373816A1CAE126D0004B596 /* MessageUI.framework */; };
 		5373816F1CAE13BE0004B596 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5373816E1CAE13BE0004B596 /* Utilities.swift */; };
 		537381751CAE1A430004B596 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537381741CAE1A430004B596 /* MapKit.framework */; };
@@ -50,7 +49,6 @@
 		5373813B1CA5AF710004B596 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5373813E1CA5AF710004B596 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		537381401CA5AF710004B596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		537381681CAE10C50004B596 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		5373816A1CAE126D0004B596 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5373816E1CAE13BE0004B596 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		537381741CAE1A430004B596 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -195,7 +193,6 @@
 		53D7C5111CB723A700360A09 /* Compose Message */ = {
 			isa = PBXGroup;
 			children = (
-				537381681CAE10C50004B596 /* MessageViewController.swift */,
 				537381801CAE1DD00004B596 /* AddGeotificationsTableViewController.swift */,
 				68D2F87D1CCEE45000FC3B63 /* RecipientListTableViewController.swift */,
 				68D2F87F1CCEF05F00FC3B63 /* GroupSelectionTableViewController.swift */,
@@ -300,7 +297,6 @@
 				53D7C5071CB59DAC00360A09 /* MessageTemplatesTableViewController.swift in Sources */,
 				68DC81A41CBDA043004A78EC /* GroupList.swift in Sources */,
 				68DC81AA1CBDAB2A004A78EC /* GroupDetailTableViewController.swift in Sources */,
-				537381691CAE10C50004B596 /* MessageViewController.swift in Sources */,
 				5318B4351CB1B5A50099CE55 /* Message.swift in Sources */,
 				68D2F87E1CCEE45000FC3B63 /* RecipientListTableViewController.swift in Sources */,
 				68D2F8801CCEF05F00FC3B63 /* GroupSelectionTableViewController.swift in Sources */,

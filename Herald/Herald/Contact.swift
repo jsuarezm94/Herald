@@ -24,7 +24,6 @@ class Contact: NSObject, NSCoding {
     
     
     //MARK: NSCoding
-    
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(contactName, forKey: contactNameKey)
         aCoder.encodeObject(number, forKey: numberKey)

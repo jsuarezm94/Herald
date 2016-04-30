@@ -97,12 +97,12 @@ class MessageTemplatesTableViewController: UITableViewController {
         cell.textLabel?.text = message
         return cell
     }
-    
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        //selectedMessage = self.templatesList.templatesArray[indexPath.row]
-//        
-//        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-//    }
+
+    /*
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    */
 
     /*
     // Override to support conditional editing of the table view.

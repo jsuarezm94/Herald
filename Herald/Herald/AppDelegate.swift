@@ -14,14 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     var window: UIWindow?
     
-    let locationManager = CLLocationManager() // Add this statement
+    let locationManager = CLLocationManager()
     
     var geotificationRegion: CLRegion?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        locationManager.delegate = self                // Add this line
-        locationManager.requestAlwaysAuthorization()   // And this one
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
 
         UIApplication.sharedApplication().cancelAllLocalNotifications()
         
@@ -60,29 +60,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func handleRegionEvent(region: CLRegion!) {
-        // Show an alert if application is active
-        /*
-        if UIApplication.sharedApplication().applicationState == .Active {
-            if let message : [String] = notefromRegionIdentifier(region.identifier) {
-                if let viewController = window?.rootViewController {
-                    let messageForAlert = "Reminder to send message \"\(message[1])\" to _________"
-                    Utilities.showSimpleAlertWithTitle("Geotification Alert", message: messageForAlert, viewController: viewController)
-                }
-            }
-        } else {
-        */
-            // Otherwise present a local notification
-            if let geotificationInfo : [String] = notefromRegionIdentifier(region.identifier) {
-                let notification = UILocalNotification()
-                //notification.alertBody = notefromRegionIdentifier(region.identifier)
-                notification.alertBody = geotificationInfo[1]
-                notification.soundName = "Default"
-                notification.alertAction = "Send"
-                notification.category = "messageCategory"
-                UIApplication.sharedApplication().presentLocalNotificationNow(notification)
-
-            }
-        //}
+        // Present a local notification
+        if let geotificationInfo : [String] = notefromRegionIdentifier(region.identifier) {
+            let notification = UILocalNotification()
+            notification.alertBody = geotificationInfo[1]
+            notification.soundName = "Default"
+            notification.alertAction = "Send"
+            notification.category = "messageCategory"
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        }
     }
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
@@ -99,15 +85,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
     }
     
-    /*
-    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
-        
-        //print(notificationSettings.types.rawValue)
-    }
-    */
-    
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-        // Do something serious in a real app.
+
         print("Received Local Notification:")
         print(notification.alertBody)
         
@@ -132,7 +111,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         completionHandler()
     }
     
-    //func notefromRegionIdentifier(identifier: String) -> String? {
     func notefromRegionIdentifier(identifier: String) -> [String]? {
         if let savedItems = NSUserDefaults.standardUserDefaults().arrayForKey(kSavedItemsKey) {
             for savedItem in savedItems {

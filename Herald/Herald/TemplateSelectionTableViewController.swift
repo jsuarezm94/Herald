@@ -27,7 +27,6 @@ class TemplateSelectionTableViewController: UITableViewController {
         
         loadAllMessages()
 
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -44,8 +43,6 @@ class TemplateSelectionTableViewController: UITableViewController {
     func dismissVC() {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    
     
     func loadAllMessages() {
         templatesList.templatesArray = []
@@ -74,12 +71,8 @@ class TemplateSelectionTableViewController: UITableViewController {
             templatesList.addCustomMessage(message6)
         }
     }
-    
-    
-    
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -125,12 +118,7 @@ class TemplateSelectionTableViewController: UITableViewController {
     /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+  
     }
     */
 

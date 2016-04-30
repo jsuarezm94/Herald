@@ -20,7 +20,6 @@ class Utilities : NSObject {
         alert.show()
     }
     
-    
     class func showSimpleAlertWithTitle(title: String!, message: String, viewController: UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let action = UIAlertAction(title: "Dismiss reminder", style: .Default, handler: {
