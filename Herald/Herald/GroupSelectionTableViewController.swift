@@ -53,6 +53,8 @@ class GroupSelectionTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("groupSelectionCell", forIndexPath: indexPath)
 
         cell.textLabel?.text = groups.entry(indexPath.row)?.name
+        cell.textLabel?.font = UIFont(name: "Avenir", size: 16)
+
 
         return cell
     }

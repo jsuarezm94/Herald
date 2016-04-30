@@ -93,6 +93,7 @@ class GroupListTableViewController: UITableViewController, AddedContactsDelegate
         if let label = cell.textLabel,
             entry = groups.entry(indexPath.row) {
             label.text = entry.name
+            label.font = UIFont(name: "Avenir", size: 16)
         }
         
         return cell

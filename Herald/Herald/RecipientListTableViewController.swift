@@ -47,6 +47,8 @@ class RecipientListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("recipientCell", forIndexPath: indexPath)
 
         cell.textLabel?.text = recipients[indexPath.row].contactName
+        cell.textLabel?.font = UIFont(name: "Avenir", size: 16)
+
 
         return cell
     }

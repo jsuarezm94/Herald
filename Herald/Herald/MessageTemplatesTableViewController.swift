@@ -95,6 +95,7 @@ class MessageTemplatesTableViewController: UITableViewController {
         // Configure the cell...        
         let message = templatesList.templatesArray[indexPath.row] as String
         cell.textLabel?.text = message
+        
         return cell
     }
 

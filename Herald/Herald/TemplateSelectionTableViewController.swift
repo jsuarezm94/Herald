@@ -86,6 +86,8 @@ class TemplateSelectionTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("templateSelectionCell", forIndexPath: indexPath)
         
         cell.textLabel?.text = templatesList.templatesArray[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "Avenir", size: 16)
+
         
         return cell
     }
