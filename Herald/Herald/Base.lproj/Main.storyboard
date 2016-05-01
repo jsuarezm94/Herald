@@ -623,7 +623,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Groups" id="eVW-C3-7Hh">
-                        <barButtonItem key="rightBarButtonItem" title="Add Group" id="6e7-iE-r2k">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6e7-iE-r2k">
                             <connections>
                                 <segue destination="thE-6U-a31" kind="presentation" identifier="newGroup" id="5xP-0M-0b9"/>
                             </connections>
