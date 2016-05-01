@@ -10,6 +10,7 @@
 		5318B4331CB1B57D0099CE55 /* MessageTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5318B4321CB1B57D0099CE55 /* MessageTemplates.swift */; };
 		5318B4351CB1B5A50099CE55 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5318B4341CB1B5A50099CE55 /* Message.swift */; };
 		5318B4371CB1B6010099CE55 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5318B4361CB1B6010099CE55 /* Contact.swift */; };
+		531FE4131CD6516500A3F104 /* TestLocations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 531FE4121CD6516500A3F104 /* TestLocations.gpx */; };
 		537381351CA5AF710004B596 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537381341CA5AF710004B596 /* AppDelegate.swift */; };
 		537381371CA5AF710004B596 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537381361CA5AF710004B596 /* ViewController.swift */; };
 		5373813A1CA5AF710004B596 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537381381CA5AF710004B596 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		5318B4321CB1B57D0099CE55 /* MessageTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTemplates.swift; sourceTree = "<group>"; };
 		5318B4341CB1B5A50099CE55 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5318B4361CB1B6010099CE55 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		531FE4121CD6516500A3F104 /* TestLocations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TestLocations.gpx; path = "../../../../Downloads/Geotify-Final 2/Geotify/TestLocations.gpx"; sourceTree = "<group>"; };
 		537381311CA5AF710004B596 /* Herald.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Herald.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		537381341CA5AF710004B596 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		537381361CA5AF710004B596 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		537381281CA5AF700004B596 = {
 			isa = PBXGroup;
 			children = (
+				531FE4121CD6516500A3F104 /* TestLocations.gpx */,
 				537381781CAE1A690004B596 /* Frameworks */,
 				537381331CA5AF710004B596 /* Herald */,
 				537381321CA5AF710004B596 /* Products */,
@@ -276,6 +279,7 @@
 			files = (
 				5373813F1CA5AF710004B596 /* LaunchScreen.storyboard in Resources */,
 				5373813C1CA5AF710004B596 /* Assets.xcassets in Resources */,
+				531FE4131CD6516500A3F104 /* TestLocations.gpx in Resources */,
 				5373813A1CA5AF710004B596 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
