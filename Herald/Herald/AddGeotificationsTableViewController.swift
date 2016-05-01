@@ -155,11 +155,10 @@ class AddGeotificationViewController: UITableViewController, UITextFieldDelegate
         eventTypeSegmentedControl.selectedSegmentIndex = 0
         Utilities.zoomToUserLocationInMapView(mapView)
         noteTextField.text! = ""
-        radiusTextField.text! = "100"
+        radiusTextField.text! = ""
         addButton.enabled = false
         geotificationRecipients = []
         numberOfRecipientsLabel.text = "0 Recipients Selected"
-
     }
     
     @IBAction private func onZoomToCurrentLocation(sender: AnyObject) {
