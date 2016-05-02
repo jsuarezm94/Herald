@@ -30,18 +30,17 @@ class GroupDetailTableViewController: UITableViewController, CNContactPickerDele
     @IBAction func addMember(sender: AnyObject) {
         let controller = CNContactPickerViewController()
         controller.delegate = self
-        controller.predicateForEnablingContact = NSPredicate(format: "phoneNumbers.@count > 0", argumentArray: nil)
+        controller.predicateForEnablingContact = NSPredicate(format: "phoneNumbers.@count > 0",argumentArray: nil)
         navigationController?.presentViewController(controller, animated: true, completion: nil)
     }
     
     
     func contactPicker(picker: CNContactPickerViewController, didSelectContacts contacts: [CNContact]) {
-        
         let formatter = CNContactFormatter()
         
         for contact in contacts {
-            if let stuff = contact.phoneNumbers[0].value as? CNPhoneNumber {
-                let number = stuff.valueForKey("digits") as! String
+            if let contactInfo = contact.phoneNumbers[0].value as? CNPhoneNumber {
+                let number = contactInfo.valueForKey("digits") as! String
                 let newContact = Contact(contactName: formatter.stringFromContact(contact)!, number: number)
                 group?.members.append(newContact)
             }
@@ -49,6 +48,7 @@ class GroupDetailTableViewController: UITableViewController, CNContactPickerDele
         
         addedContactsDelegate!.groupModifiedAddedContacts(self, didAddGroup: group!)
     }
+    
     
     
     override func viewDidAppear(animated: Bool) {
