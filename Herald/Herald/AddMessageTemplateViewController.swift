@@ -31,13 +31,21 @@ class AddMessageTemplateViewController: UIViewController {
     }
 
     @IBAction func saveMessage(sender: AnyObject) {
-        let newMessage = newMessageTemplateText.text!
-        templatesList?.addCustomMessage(newMessage)
         
-        NSUserDefaults.standardUserDefaults().setObject(templatesList?.templatesArray, forKey: "messageTemplates")
-        NSUserDefaults.standardUserDefaults().synchronize()
-        
-        dismissViewControllerAnimated(true, completion: nil)
+        if (newMessageTemplateText.text! == "") {
+            
+            dismissViewControllerAnimated(true, completion: nil)
+            
+        } else {
+            
+            let newMessage = newMessageTemplateText.text!
+            templatesList?.addCustomMessage(newMessage)
+            
+            NSUserDefaults.standardUserDefaults().setObject(templatesList?.templatesArray, forKey: "messageTemplates")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+            dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
 

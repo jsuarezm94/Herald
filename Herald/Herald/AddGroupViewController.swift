@@ -19,10 +19,19 @@ class AddGroupViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func doneButton(sender: AnyObject) {
-        let group = Group(name: groupNameTextField.text!, members: [])
-        groups?.addGroup(group)
-        dismissViewControllerAnimated(true, completion: nil)
-        saveGroups()
+        
+        if (groupNameTextField.text! == ""){
+            
+            dismissViewControllerAnimated(true, completion: nil)
+            
+        } else {
+            
+            let group = Group(name: groupNameTextField.text!, members: [])
+            groups?.addGroup(group)
+            dismissViewControllerAnimated(true, completion: nil)
+            saveGroups()
+            
+        }
     }
     
     
