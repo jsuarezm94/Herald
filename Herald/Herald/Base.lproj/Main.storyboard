@@ -513,7 +513,7 @@
                     <navigationItem key="navigationItem" title="Message Templates" id="ZgZ-4X-PDH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TFS-Jd-lY2">
                             <connections>
-                                <segue destination="jQR-JL-0GM" kind="show" identifier="newMessageTemplate" id="1ul-BS-fQ4"/>
+                                <segue destination="jQR-JL-0GM" kind="presentation" identifier="newMessageTemplate" id="1ul-BS-fQ4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -522,7 +522,7 @@
             </objects>
             <point key="canvasLocation" x="1013" y="2308"/>
         </scene>
-        <!--New Message Template-->
+        <!--Add Message Template View Controller-->
         <scene sceneID="Re8-c7-QhO">
             <objects>
                 <viewController id="jQR-JL-0GM" customClass="AddMessageTemplateViewController" customModule="Herald" customModuleProvider="target" sceneMemberID="viewController">
@@ -548,27 +548,43 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sT8-Xn-C0z">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Add Template" id="06O-DS-QPv">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3EQ-hk-1fm">
+                                            <connections>
+                                                <action selector="cancelMessage:" destination="jQR-JL-0GM" id="gXc-uy-dBz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="FHL-DB-1cQ">
+                                            <connections>
+                                                <action selector="saveMessage:" destination="jQR-JL-0GM" id="8dX-Li-Q7x"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="sT8-Xn-C0z" firstAttribute="width" secondItem="S1h-Iq-jRk" secondAttribute="width" id="0mO-bd-4l4"/>
+                            <constraint firstItem="sT8-Xn-C0z" firstAttribute="top" secondItem="3Zt-QL-5v8" secondAttribute="bottom" id="CX7-cY-tqk"/>
                             <constraint firstItem="Jxx-AZ-6NX" firstAttribute="centerX" secondItem="S1h-Iq-jRk" secondAttribute="centerX" id="MyC-29-fvH"/>
                             <constraint firstItem="D2D-vT-rgh" firstAttribute="top" secondItem="Jxx-AZ-6NX" secondAttribute="bottom" constant="20" id="MzN-hV-0sa"/>
+                            <constraint firstItem="sT8-Xn-C0z" firstAttribute="top" secondItem="3Zt-QL-5v8" secondAttribute="bottom" id="Rpd-4B-6cf"/>
+                            <constraint firstItem="sT8-Xn-C0z" firstAttribute="width" secondItem="S1h-Iq-jRk" secondAttribute="width" id="Xlz-F9-Em4"/>
+                            <constraint firstItem="sT8-Xn-C0z" firstAttribute="centerX" secondItem="S1h-Iq-jRk" secondAttribute="centerX" id="eNV-2e-pYq"/>
                             <constraint firstItem="D2D-vT-rgh" firstAttribute="centerY" secondItem="S1h-Iq-jRk" secondAttribute="centerY" id="r1o-DO-kbh"/>
                             <constraint firstItem="D2D-vT-rgh" firstAttribute="centerX" secondItem="S1h-Iq-jRk" secondAttribute="centerX" id="tfd-4X-bDF"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CX7-cY-tqk"/>
+                                <exclude reference="Xlz-F9-Em4"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="New Message Template" id="hFz-Z7-hWY">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Szw-82-2Y1">
-                            <connections>
-                                <action selector="cancelMessage:" destination="jQR-JL-0GM" id="4Dy-1H-n40"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9dh-jJ-krR">
-                            <connections>
-                                <action selector="saveMessage:" destination="jQR-JL-0GM" id="biI-3N-DUj"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="newMessageTemplateText" destination="D2D-vT-rgh" id="mZ5-nx-w5c"/>
                     </connections>
@@ -802,7 +818,7 @@
                                                 <action selector="cancelButton:" destination="thE-6U-a31" id="j37-A7-HYT"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Done" id="N9p-AO-iDx">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="N9p-AO-iDx">
                                             <connections>
                                                 <action selector="doneButton:" destination="thE-6U-a31" id="qTg-bc-mhV"/>
                                             </connections>
