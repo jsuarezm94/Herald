@@ -25,6 +25,7 @@ How many times have you forgotten to notify your parents, friends, or colleagues
 * ContactsUI
 * MKAnnotation
  
+The major sources of information include StackOverflow, XCode and Swift official documentation, as well as Ray Wenderlich's Core Location Tutorial on Geofencing. Other tutorials on notification actions and contact pickers were also analyzed to better understand the codein these libraries and toolkits.
    
 This application was created for the final project of the iOS Mobile Applications class at the __University of Notre Dame__.
 A link to the slides used for the final presentation can be found in the following link: https://docs.google.com/a/nd.edu/presentation/d/1kxsEI4scf6qlJlol6pzf528Kd8IUDp1sQTB1tfBtqd8/edit?usp=sharing
